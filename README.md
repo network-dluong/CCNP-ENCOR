@@ -6,4 +6,4 @@
 
 
 
->> *[To main page](https://github.com/network-dluong/CCNP-ENCOR/tree/master)*
+> *[To main page](https://github.com/network-dluong/CCNP-ENCOR/tree/master)*
