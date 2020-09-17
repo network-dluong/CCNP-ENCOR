@@ -1,3 +1,3 @@
-# CCNP-ENCOR
+# CCNP-ENCOR Study Guide
 
-CCNP study guide
+###1.0 **Architecture**
