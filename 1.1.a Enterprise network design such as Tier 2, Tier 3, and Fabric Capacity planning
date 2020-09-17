@@ -25,25 +25,25 @@
 
 #####	Layer 3 Access Layer (Routed Access)
 * Layer 3 is extended all the way to the access layer switches, which act as full Layer 3 routed nodes (providing both Layer 2 and Layer 3 switching)
-*	Access-to-distribution Layer 2 uplink trunks replaced with Layer 3 point-to-point routed links
-*	Layer 2/3 demarcation point moved from distribution switch to access switch
-*	Benefits: No FHRP required, No STP required, Increased uplink utilization, Easier troubleshooting, Faster convergence
-*	Does not support spanning VLANs across multiple access switches
+* Access-to-distribution Layer 2 uplink trunks replaced with Layer 3 point-to-point routed links
+* Layer 2/3 demarcation point moved from distribution switch to access switch
+* Benefits: No FHRP required, No STP required, Increased uplink utilization, Easier troubleshooting, Faster convergence
+* Does not support spanning VLANs across multiple access switches
 
 
 #####	Simplified Campus Design
-*	Switch clustering such as Virtual Switching System (VSS) and stacking technologies such as StackWise (multiple physical switches act as a single logical switch)
-*	Benefits: Simplified design, No FHRP required, Reduced STP dependence, Increased uplink utilization, Easier troubleshooting, Faster convergence, Distributed VLANs
-*	Loop free, high availability, flexible, resilient, and easy to manage
+* Switch clustering such as Virtual Switching System (VSS) and stacking technologies such as StackWise (multiple physical switches act as a single logical switch)
+* Benefits: Simplified design, No FHRP required, Reduced STP dependence, Increased uplink utilization, Easier troubleshooting, Faster convergence, Distributed VLANs
+* Loop free, high availability, flexible, resilient, and easy to manage
 
 
 #####	Fabric Network
-*	Overlay network (virtual) built over an underlay network (physical) using overlay tunneling technologies such as VXLAN
-*	SD-Access for campus networks, SD-WAN for WAN networks
+* Overlay network (virtual) built over an underlay network (physical) using overlay tunneling technologies such as VXLAN
+* SD-Access for campus networks, SD-WAN for WAN networks
 
 
 #####	SD-Access Fabric Concepts
-*	Virtual Network (VN) - provides virtualization at device level, using VRF instances to create multiple Layer 3 routing tables. Provides segmentation across IP addresses. In control plane, LISP instance IDs are used to maintain separate VRF instances. In data plane, edge nodes add VXLAN VNID to fabric encapsulation
-*	Host pool – group of endpoints assigned to an IP pool subnet in SDA fabric
-*	Scalable group – group of endpoints with similar policies. Direct one-to-one relationship between host pools and scalable groups
-*	Anycast gateway – provides a pervasive Layer 3 default gateway where the same SVI is provisioned on every edge node with the same SVI IP and MAC address. Simplifies IP address assignment and allowing fewer but larger IP subnets to be deployed. Behaves like a logical switch that spans multiple buildings
+* Virtual Network (VN) - provides virtualization at device level, using VRF instances to create multiple Layer 3 routing tables. Provides segmentation across IP addresses. In control plane, LISP instance IDs are used to maintain separate VRF instances. In data plane, edge nodes add VXLAN VNID to fabric encapsulation
+* Host pool – group of endpoints assigned to an IP pool subnet in SDA fabric
+* Scalable group – group of endpoints with similar policies. Direct one-to-one relationship between host pools and scalable groups
+* Anycast gateway – provides a pervasive Layer 3 default gateway where the same SVI is provisioned on every edge node with the same SVI IP and MAC address. Simplifies IP address assignment and allowing fewer but larger IP subnets to be deployed. Behaves like a logical switch that spans multiple buildings
