@@ -2,7 +2,7 @@
 * Creates a virtual IP (VIP) gateway instance that is shared between Layer 3 devices
 * Deployed for reliability and high availability to ensure load balancing and failover capability in case of router failover
 * Object tracking – users can track specific objects in network and take necessary action when any object’s state change affects network traffic
->	**Track (object-number) ip route (route/prefix-length) reachability** 
+> **Track (object-number) ip route (route/prefix-length) reachability** 
 > **show track (object-number)**
 
 
@@ -27,7 +27,7 @@
 
 
 #####	VRRP (Virtual Router Redundancy Protocol)
-*	Industry standard and slightly different to HSRP:
+* Industry standard and slightly different to HSRP:
 1. Master router – preferred active router controlling VIP gateway
 2. Backup router – all other VRRP routers
 3. Enable preemption by default
@@ -61,11 +61,11 @@
 
 
 #####	GLBP (Global Load Balancing Protocol)
-*	Provides gateway redundancy and load-balancing capability to network segment
-*	Provides redundancy with active/standby gateway, load-balancing by ensuring each member of GLBP group takes care of forwarding traffic to appropriate gateway
-*	Active Virtual Gateway (AVG) – routers elect one AVG per GLBP group to respond to initial ARP for VIP
-*	Active Virtual Forwarder (AVF) – routes traffic received from assigned hosts. Unique MAC address is created and assigned by AVG to AVFs. AVF assigned to host when AVG replies to ARP with the assigned AVF’s virtual MAC address
-*	Supports four active AVFs and one AVG per GLBP group, and router can be AVG and AVF simultaneously
+* Provides gateway redundancy and load-balancing capability to network segment
+* Provides redundancy with active/standby gateway, load-balancing by ensuring each member of GLBP group takes care of forwarding traffic to appropriate gateway
+* Active Virtual Gateway (AVG) – routers elect one AVG per GLBP group to respond to initial ARP for VIP
+* Active Virtual Forwarder (AVF) – routes traffic received from assigned hosts. Unique MAC address is created and assigned by AVG to AVFs. AVF assigned to host when AVG replies to ARP with the assigned AVF’s virtual MAC address
+* Supports four active AVFs and one AVG per GLBP group, and router can be AVG and AVF simultaneously
 1. Define GLBP instance
 > **glbp (id) ip (vip-address)**
 2. (Optional) configure GLBP preemption
@@ -81,9 +81,9 @@
 
 
 #####	SSO (Stateful Switchover)
-*	Redundancy feature that allows Cisco router with two RPs (route processor) to synchronize router configuration and control plane state information
-*	Checkpointing – process of mirroring information between RPs
-*	Standby RP immediately takes control and prevents basic problems, but layer 3 packet forward is disrupted without additional configuration
-*	RP switchover triggers routing protocol adjacency flap that clear route table
-*	When route table is cleared, CEF entries are purged, and traffic is no longer routed until network topology is relearned and forwarding table is reprogrammed
-*	Enabling nonstop forwarding (NSF) or nonstop routing (NSR) high availability capabilities informs the routers to maintain CEF entries for short duration and continue forwarding packets through an RP failure until control plane recovers
+* Redundancy feature that allows Cisco router with two RPs (route processor) to synchronize router configuration and control plane state information
+* Checkpointing – process of mirroring information between RPs
+* Standby RP immediately takes control and prevents basic problems, but layer 3 packet forward is disrupted without additional configuration
+* RP switchover triggers routing protocol adjacency flap that clear route table
+* When route table is cleared, CEF entries are purged, and traffic is no longer routed until network topology is relearned and forwarding table is reprogrammed
+* Enabling nonstop forwarding (NSF) or nonstop routing (NSR) high availability capabilities informs the routers to maintain CEF entries for short duration and continue forwarding packets through an RP failure until control plane recovers
