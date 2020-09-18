@@ -10,8 +10,10 @@
 ### 1.3 *Differentiate between on-premises and cloud infrastructure deployments*  
 
 ### 1.4 *Explain the working principles of the Cisco SD-WAN solution*  
+1.4.a SD-WAN control and data planes elements  
+1.4.b Traditional WAN and SD-WAN solutions  
 
-
+### 1.5 *Explain the working principles of the Cisco SD-Access solution* 
 
 
 > *[To main page](https://github.com/network-dluong/CCNP-ENCOR/tree/master)*
