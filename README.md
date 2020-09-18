@@ -9,3 +9,7 @@
 
 ### 2.2 *Configure and verify data path virtualization technologies*  
 2.2.a VRF  
+2.2.b GRE and IPsec tunneling  
+
+
+### 2.3 *Describe network virtualization concepts*  
