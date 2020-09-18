@@ -14,7 +14,7 @@
 
 ### 2.3 *[Describe network virtualization concepts](https://github.com/network-dluong/CCNP-ENCOR/blob/2.0-Virtualization/2.3%20Describe%20network%20virtualization%20concepts.md)*  
 2.3.a LISP  
-2.3.b VXLAN  
+2.3.b [VXLAN](https://github.com/network-dluong/CCNP-ENCOR/blob/2.0-Virtualization/2.3.b%20VXLAN.md)  
 
 
 > [*To main page*](https://github.com/network-dluong/CCNP-ENCOR/tree/master)
