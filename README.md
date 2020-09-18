@@ -28,7 +28,10 @@
 1.6.b QoS policy  
 
 
-### 1.7 *Differentiate hardware and software switching mechanisms*
+### 1.7 *Differentiate hardware and software switching mechanisms*  
+1.7.a Process and CEF  
+1.7.b MAC address table and TCAM  
+1.7.c FIB vs. RIB  
 
 
 
