@@ -1,4 +1,3 @@
-# CCNP-ENCOR Study Guide
+## 2.0 Virtualization  
 
-### 1.0 [Architecture](https://github.com/network-dluong/CCNP-ENCOR/tree/1.0-Architecture)  
-### 2.0 [Virtualization](https://github.com/network-dluong/CCNP-ENCOR/tree/2.0-Virtualization)  
+2.1 *Describe device virtualization technologies*  
