@@ -30,7 +30,7 @@
 
 ### 1.7 *Differentiate hardware and software switching mechanisms*  
 1.7.a [Process and CEF](https://github.com/network-dluong/CCNP-ENCOR/blob/1.0-Architecture/1.7.a%20Process%20and%20CEF.md)  
-1.7.b MAC address table and TCAM  
+1.7.b [MAC address table and TCAM](https://github.com/network-dluong/CCNP-ENCOR/blob/1.0-Architecture/1.7.b%20MAC%20address%20table%20and%20TCAM.md)  
 1.7.c FIB vs. RIB  
 
 
