@@ -12,7 +12,7 @@
 2.2.b [GRE and IPsec tunneling](https://github.com/network-dluong/CCNP-ENCOR/blob/2.0-Virtualization/2.2b%20GRE%20and%20IPsec%20tunneling.md)  
 
 
-### 2.3 *Describe network virtualization concepts*  
+### 2.3 *[Describe network virtualization concepts](https://github.com/network-dluong/CCNP-ENCOR/blob/2.0-Virtualization/2.3%20Describe%20network%20virtualization%20concepts.md)*  
 2.3.a LISP  
 2.3.b VXLAN  
 
