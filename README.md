@@ -14,7 +14,7 @@
 1.4.b Traditional WAN and SD-WAN solutions  
 
 ### 1.5 *[Explain the working principles of the Cisco SD-Access solution](https://github.com/network-dluong/CCNP-ENCOR/blob/1.0-Architecture/1.5%20Explain%20the%20working%20principles%20of%20the%20Cisco%20SD-Access%20solution.md)*  
-1.5.a SD-Access control and data planes elements  
+1.5.a [SD-Access control and data planes elements](https://github.com/network-dluong/CCNP-ENCOR/blob/1.0-Architecture/1.5.a%20SD-Access%20control%20and%20data%20planes%20elements.md)  
 1.5.b Traditional campus interoperating with SD-Access  
 
 ### 1.6 *Describe concepts of wired and wireless QoS*  
