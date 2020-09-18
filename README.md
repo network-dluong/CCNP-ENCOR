@@ -7,7 +7,7 @@
 ### 2.0 [Virtualization](https://github.com/network-dluong/CCNP-ENCOR/tree/2.0-Virtualization)  
 
 
-### 3.0 Infrastructure  
+### 3.0 [Infrastructure](https://github.com/network-dluong/CCNP-ENCOR/tree/3.0-Infrastructure)  
 
 
 ### 4.0 Network Assurance  
