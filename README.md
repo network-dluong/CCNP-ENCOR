@@ -24,7 +24,7 @@
 ### 3.4 *IP Services*  
 3.4.a Describe Network Time Protocol (NTP)  
 3.4.b Configure and verify NAT/PAT  
-3.4.c [Configure first hop redundancy protocols, such as HSRP and VRRP](https://github.com/network-dluong/CCNP-ENCOR/blob/1.0-Architecture/1.1.b%20High%20availability%20techniques%20such%20as%20redundancy%2C%20FHRP%2C%20and%20SSO.md)  
+3.4.c Configure first hop redundancy protocols, such as HSRP and VRRP
 3.4.d Describe multicast protocols, such as PIM and IGMP v2/v3  
 
 
