@@ -13,7 +13,7 @@
 ### 4.0 [Network Assurance](https://github.com/network-dluong/CCNP-ENCOR/tree/4.0-Network-Assurance)  
 
 
-### 5.0 Security  
+### 5.0 [Security](https://github.com/network-dluong/CCNP-ENCOR/tree/5.0-Security)  
 
 
 ### 6.0 Automation  
