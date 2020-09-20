@@ -3,7 +3,7 @@
 
 ### 5.1 *Configure and verify device access control*  
 5.1.a [Lines and password protection](https://github.com/network-dluong/CCNP-ENCOR/blob/5.0-Security/5.1.a%20Lines%20and%20password%20protection.md)  
-5.1.b Authentication and authorization using AAA  
+5.1.b [Authentication and authorization using AAA](https://github.com/network-dluong/CCNP-ENCOR/blob/5.0-Security/5.1.b%20Authentication%20and%20authorization%20using%20AAA.md)  
 
 
 ### 5.2 *Configure and verify infrastructure security features*  
