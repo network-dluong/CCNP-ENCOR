@@ -1,10 +1,10 @@
 ## 4.0 Network Assurance  
 
 
-### *4.1 Diagnose network problems using tools such as debugs, conditional debugs, trace route, ping, SNMP, and syslog*  
+### 4.1 Diagnose network problems using tools such as debugs, conditional debugs, trace route, ping, SNMP, and syslog  
 
 
-### *4.2 Configure and verify device monitoring using syslog for remote logging*  
+### 4.2 Configure and verify device monitoring using syslog for remote logging  
 
 
 ### *4.3 Configure and verify NetFlow and Flexible NetFlow*  
