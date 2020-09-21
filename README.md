@@ -20,7 +20,7 @@
 ### 5.5 *Describe the components of network security design*  
 5.5.a [Threat defense](https://github.com/network-dluong/CCNP-ENCOR/blob/5.0-Security/5.5.a%20Threat%20defense.md)  
 5.5.b [Endpoint security](https://github.com/network-dluong/CCNP-ENCOR/blob/5.0-Security/5.5.b%20Endpoint%20Security.md)  
-5.5.c Next-generation firewall (NGFW)  
+5.5.c [Next-generation firewall (NGFW)](https://github.com/network-dluong/CCNP-ENCOR/blob/5.0-Security/5.5.c%20Next-generation%20firewall%20(NGFW).md)  
 5.5.d [TrustSec, MACsec](https://github.com/network-dluong/CCNP-ENCOR/blob/5.0-Security/5.5.d%20TrustSec,%20MACsec.md)  
 5.5.e Network access control with 802.1X, MAB, and WebAuth  
 
