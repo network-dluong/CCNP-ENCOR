@@ -8,7 +8,7 @@
 
 
 ### 2.2 *Configure and verify data path virtualization technologies*  
-2.2.a VRF  
+2.2.a [VRF](https://github.com/network-dluong/CCNP-ENCOR/blob/2.0-Virtualization/2.2.a%20VRF.md)  
 2.2.b [GRE and IPsec tunneling](https://github.com/network-dluong/CCNP-ENCOR/blob/2.0-Virtualization/2.2b%20GRE%20and%20IPsec%20tunneling.md)  
 
 
