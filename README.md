@@ -18,7 +18,7 @@
 
 
 ### 5.5 *Describe the components of network security design*  
-5.5.a Threat defense  
+5.5.a [Threat defense](https://github.com/network-dluong/CCNP-ENCOR/blob/5.0-Security/5.5.a%20Threat%20defense.md)  
 5.5.b Endpoint security  
 5.5.c Next-generation firewall (NGFW)  
 5.5.d TrustSec, MACsec  
