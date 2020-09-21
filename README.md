@@ -8,7 +8,7 @@
 
 ### 5.2 *Configure and verify infrastructure security features*  
 5.2.a ACLs  
-5.2.b CoPP  
+5.2.b [CoPP](https://github.com/network-dluong/CCNP-ENCOR/blob/5.0-Security/5.2.b%20CoPP.md)  
 
 
 ### 5.3 *Describe REST API security*  
