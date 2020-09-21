@@ -24,7 +24,7 @@
 ### 3.4 *IP Services*  
 3.4.a [Describe Network Time Protocol (NTP)](https://github.com/network-dluong/CCNP-ENCOR/blob/3.0-Infrastructure/3.4.a%20Describe%20Network%20Time%20Protocol%20(NTP).md)  
 3.4.b [Configure and verify NAT/PAT](https://github.com/network-dluong/CCNP-ENCOR/blob/3.0-Infrastructure/3.4.b%20Configure%20and%20verify%20NAT-PAT.md)  
-3.4.c Configure first hop redundancy protocols, such as HSRP and VRRP  
+3.4.c [Configure first hop redundancy protocols, such as HSRP and VRRP](https://github.com/network-dluong/CCNP-ENCOR/blob/3.0-Infrastructure/3.4.c%20Configure%20first%20hop%20redundancy%20protocols,%20such%20as%20HSRP%20and%20VRRP.md)  
 3.4.d Describe multicast protocols, such as PIM and IGMP v2/v3  
 
 
