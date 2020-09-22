@@ -4,7 +4,7 @@
 ### 4.1 Diagnose network problems using tools such as debugs, conditional debugs, trace route, ping, SNMP, and syslog  
 
 
-### 4.2 Configure and verify device monitoring using syslog for remote logging  
+### 4.2 [Configure and verify device monitoring using syslog for remote logging](https://github.com/network-dluong/CCNP-ENCOR/blob/4.0-Network-Assurance/4.2%20Configure%20and%20verify%20device%20monitoring%20using%20syslog%20for%20remote%20logging.md)  
 
 
 ### 4.3 Configure and verify NetFlow and Flexible NetFlow  
