@@ -7,7 +7,7 @@
 2.1.c [Virtual Switching](https://github.com/network-dluong/CCNP-ENCOR/blob/2.0-Virtualization/2.1.c%20Virtual%20Switching.md)  
 
 
-### 2.2 *Configure and verify data path virtualization technologies*  
+### 2.2 *[Configure and verify data path virtualization technologies](https://github.com/network-dluong/CCNP-ENCOR/blob/2.0-Virtualization/2.2%20Configure%20and%20verify%20data%20path%20virtualization%20technologies.md)*  
 2.2.a [VRF](https://github.com/network-dluong/CCNP-ENCOR/blob/2.0-Virtualization/2.2.a%20VRF.md)  
 2.2.b [GRE and IPsec tunneling](https://github.com/network-dluong/CCNP-ENCOR/blob/2.0-Virtualization/2.2b%20GRE%20and%20IPsec%20tunneling.md)  
 
