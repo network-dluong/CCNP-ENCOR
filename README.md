@@ -7,7 +7,7 @@
 
 
 ### 5.2 *Configure and verify infrastructure security features*  
-5.2.a ACLs  
+5.2.a [ACLs](https://github.com/network-dluong/CCNP-ENCOR/blob/5.0-Security/5.2.a%20ACLs.md)  
 5.2.b [CoPP](https://github.com/network-dluong/CCNP-ENCOR/blob/5.0-Security/5.2.b%20CoPP.md)  
 
 
