@@ -10,7 +10,7 @@
 ### 4.3 [Configure and verify NetFlow and Flexible NetFlow](https://github.com/network-dluong/CCNP-ENCOR/blob/4.0-Network-Assurance/4.3%20Configure%20and%20verify%20NetFlow%20and%20Flexible%20NetFlow.md)  
 
 
-### 4.4 Configure and verify SPAN/RSPAN/ERSPAN  
+### 4.4 [Configure and verify SPAN/RSPAN/ERSPAN](https://github.com/network-dluong/CCNP-ENCOR/blob/4.0-Network-Assurance/4.4%20Configure%20and%20verify%20SPAN,%20RSPAN,%20ERSPAN.md)  
 
 
 ### 4.5 [Configure and verify IPSLA](https://github.com/network-dluong/CCNP-ENCOR/blob/4.0-Network-Assurance/4.5%20Configure%20and%20verify%20IPSLA.md)  
