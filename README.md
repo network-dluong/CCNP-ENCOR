@@ -19,7 +19,7 @@
 ### 4.6 [Describe Cisco DNA Center workflows to apply network configuration, monitoring, and management](https://github.com/network-dluong/CCNP-ENCOR/blob/4.0-Network-Assurance/4.6%20Describe%20Cisco%20DNA%20Center%20workflows%20to%20apply%20network%20configuration%2C%20monitoring%2C%20and%20management.md)  
 
 
-### 4.7 Configure and verify NETCONF and RESTCONF  
+### 4.7 [Configure and verify NETCONF and RESTCONF](https://github.com/network-dluong/CCNP-ENCOR/blob/4.0-Network-Assurance/4.7%20Configure%20and%20verify%20NETCONF%20and%20RESTCONF.md)  
 
 
 > *[To main page](https://github.com/network-dluong/CCNP-ENCOR/tree/master)*
