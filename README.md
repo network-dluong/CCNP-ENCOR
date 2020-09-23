@@ -1,7 +1,7 @@
 ## 4.0 Network Assurance  
 
 
-### 4.1 Diagnose network problems using tools such as debugs, conditional debugs, trace route, ping, SNMP, and syslog  
+### 4.1 [Diagnose network problems using tools such as debugs, conditional debugs, trace route, ping, SNMP, and syslog](https://github.com/network-dluong/CCNP-ENCOR/blob/4.0-Network-Assurance/4.1%20Diagnose%20network%20problems%20using%20tools%20such%20as%20debugs,%20conditional%20debugs,%20trace%20route,%20ping,%20SNMP,%20and%20syslog.md)  
 
 
 ### 4.2 [Configure and verify device monitoring using syslog for remote logging](https://github.com/network-dluong/CCNP-ENCOR/blob/4.0-Network-Assurance/4.2%20Configure%20and%20verify%20device%20monitoring%20using%20syslog%20for%20remote%20logging.md)  
