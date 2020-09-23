@@ -7,7 +7,7 @@
 ### 4.2 [Configure and verify device monitoring using syslog for remote logging](https://github.com/network-dluong/CCNP-ENCOR/blob/4.0-Network-Assurance/4.2%20Configure%20and%20verify%20device%20monitoring%20using%20syslog%20for%20remote%20logging.md)  
 
 
-### 4.3 Configure and verify NetFlow and Flexible NetFlow  
+### 4.3 [Configure and verify NetFlow and Flexible NetFlow](https://github.com/network-dluong/CCNP-ENCOR/blob/4.0-Network-Assurance/4.3%20Configure%20and%20verify%20NetFlow%20and%20Flexible%20NetFlow.md)  
 
 
 ### 4.4 Configure and verify SPAN/RSPAN/ERSPAN  
