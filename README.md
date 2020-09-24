@@ -16,4 +16,4 @@
 ### 5.0 [Security](https://github.com/network-dluong/CCNP-ENCOR/tree/5.0-Security)  
 
 
-### 6.0 Automation  
+### [6.0 Automation](https://github.com/network-dluong/CCNP-ENCOR/tree/6.0-Automation)  
