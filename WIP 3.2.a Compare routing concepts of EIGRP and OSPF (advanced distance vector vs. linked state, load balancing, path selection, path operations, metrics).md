@@ -42,7 +42,7 @@
  * **Metrics** – unit of measure used by routing protocol in best-path calculation  
 
 
-| Routing Protocol | Default Administrative Distance |
+| **Routing Protocol** | **Default Administrative Distance** |
 |	 --- 	|	 --- 	|
 | Connected | 0 |
 | Static | 1 |
@@ -55,3 +55,12 @@
 | EIGRP (external) | 170 |
 | Internal BGP (iBGP) | 200 |
 
+## EIGRP
+| **Term** | **Definition** |
+| --- | --- |
+| Successor Route | The route with the lowest path metric to reach a destination |
+| Successor | The first next-hop router for the successor route |
+| Feasible Distance (FD) | The metric value for the lowest-metric path to reach a destination |
+| Reported Distance (RD) | The distance reported by a router to reach a prefix. The reported distance value is the feasible distance for the advertising router |
+| Feasibility Condition | For route to be considered a backup route, the RD received for that route must be less than the FD calculated locally. This logic guarantees a loop-free path |
+| Feasible Successor | A route that satisfies the feasibility condition and is maintained as a backup route. It ensures that the backup route is loop-free | 
