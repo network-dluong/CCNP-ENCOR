@@ -38,7 +38,7 @@
 
 ## EtherChannel Configuration  
 * Configure range of interfaces:  
-> *interface range (*int-range-id*)**  
+> **interface range (*int-range-id*)**  
 * Static EtherChannel:  
 > **channel-group (*etherchannel-id*) mode on**  
 * LACP EtherChannel:  
