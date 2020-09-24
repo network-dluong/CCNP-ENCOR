@@ -18,8 +18,8 @@
 
 
 ## Link-State Algorithms  
-•	Advertises link state and link metric for each of its connected links and directly connected routers to every router in network  
-•	OSPF advertisements are link-state advertisements (LSAs), and IS-IS use link-state packets (LSPs)  
+* Advertises link state and link metric for each of its connected links and directly connected routers to every router in network  
+* OSPF advertisements are link-state advertisements (LSAs), and IS-IS use link-state packets (LSPs)  
   * When router receives advertisement from neighbor, it stores the information in link-state database (LSDB) and advertises the information to each neighbor  
   * Allows routers in network to have synchronized and identical map of network  
   * Every router runs Dijkstra shortest path first (SPF) algorithm to calculate best shortest loop-free paths  
@@ -27,4 +27,31 @@
 * Compared to GPS navigation system, which has a complete map and can make the best decision on which way is the shortest and best path to destination  
 
 
+## Path Vector Algorithm  
+* BGP, like distance vector protocol but instead of looking at the distance to determine the best loop-free path, it looks at various BGP path attributes  
+ * Autonomous system path (AS_Path), multi-exit discriminator (MED), origin, next hop, local preference, atomic aggregate, and aggregator  
+ * Keeps record of each AS that the advertisement traverses  
+ 
+
+## Path Selection  
+* Router identifies path a packet should take by looking at prefix length in the FIB  
+* FIB is programmed through the routing table (RIB)  
+* RIB is composed of routes presented from the routing protocol processes  
+ * **Prefix length** – represents number of leading binary bits in subnet mask that are in the on position  
+ * **Administrative distance** – rating of trustworthiness of routing information source. If router learns about a route to a destination from more than one protocol with all routes having same prefix length, then AD is compared  
+ * **Metrics** – unit of measure used by routing protocol in best-path calculation  
+
+
+| Routing Protocol | Default Administrative Distance |
+|	 --- 	|	 --- 	|
+| Connected | 0 |
+| Static | 1 |
+| EIGRP summary route | 5 |
+|External BGP (eBGP) | 20 |
+|EIGRP (Internal) | 90 |
+| OSPF | 110 |
+| IS-IS | 115 |
+| RIP | 120 |
+| EIGRP (external) | 170 |
+| Internal BGP (iBGP) | 200 |
 
