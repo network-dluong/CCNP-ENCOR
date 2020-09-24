@@ -42,7 +42,7 @@
 * Static EtherChannel:  
 > **channel-group (*etherchannel-id*) mode on**  
 * LACP EtherChannel:  
-> **channel-group (*etherchannel-id() mode {active | passive}**  
+> **channel-group (*etherchannel-id*) mode {active | passive}**  
 * PAgP EtherChannel:  
 > **channel-group (*etherchannel-id*) mode {auto | desirable | non-silent}**  
 * **Non-silent** – requires port to receive PAgP packets before adding it to the EtherChannel, recommended when connecting PAgP-compliant switches together  
