@@ -71,6 +71,8 @@
  * EIGRP neighbors that have advertised that prefix
  * Metrics from each neighbor
  * Values used for calculating the metric
+* Default EIGRP hello timer is 5 seconds (60 seconds for T1 or lower)
+* Default hold time value is 3 timex hello timer interval
 
 
 ## EIGRP Neighbors  
@@ -83,4 +85,25 @@
 | 5 | Reply | Sent in response to a query packet |  
 
 
-## Path Metric Calculation  
+## EIGRP Load Balancing  
+* Variance value - feasible distance (FD) multiplied by EIGRP variance multiplier  
+* Variance multiplier - divide feasible successor metric by the successor route metric (whole number, round up any remainder)  
+
+
+## EIGRP Convergence  
+* When EIGRP detects lost successor, the feasible successor becomes the new successor route  
+* If a feasible successor is not available for a prefix, DUAL must perform a new route calculation (route state changes from passive (P) to active (A))  
+* Router receiving a query packet:  
+ * Might reply to query that the router does not have a route to the prefix  
+ * If query did not come from successor for that route, it detects the delay set for infinity but ignore it because it did not come from successor  
+ if query came from successor for the route, the receiving router detects the delay set for infinity, sets prefix as active, and sends query packet to all downstream EIGRP neigbors  
+ 
+ 
+## EIGRP Route Summarization  
+* Summarizes network prefixes on an interface basis, summary aggregate is configured for the inteface  
+* Prefixes within summary aggregate are suppressed, and summary aggregate prefix is advertised in lieu of the original prefixes  
+* Summary aggregate prefix is not advertised until a prefix matches it  
+* Summarization creates a query boundary and shrinks the routing table and the query domain when a route goes active during convergence  
+
+
+## OSPF  
