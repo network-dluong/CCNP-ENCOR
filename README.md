@@ -1,4 +1,4 @@
-# 6.0 Automation
+## 6.0 Automation
 
 
 ### 6.1 Interpret basic Python components and scripts  
@@ -22,4 +22,4 @@
 ### 6.7 Compare agent vs. agentless orchestration tools, such as Chef, Puppet, Ansible, and SaltStack  
 
 
-
+> *[To main page](https://github.com/network-dluong/CCNP-ENCOR/tree/master)*  
