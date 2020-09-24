@@ -1,19 +1,25 @@
-# CCNP-ENCOR 350-401 Study Guide
+# 6.0 Automation
 
 
-### 1.0 [Architecture](https://github.com/network-dluong/CCNP-ENCOR/tree/1.0-Architecture)  
+### 6.1 Interpret basic Python components and scripts  
 
 
-### 2.0 [Virtualization](https://github.com/network-dluong/CCNP-ENCOR/tree/2.0-Virtualization)  
+### 6.2 Construct valid JSON encoded file  
 
 
-### 3.0 [Infrastructure](https://github.com/network-dluong/CCNP-ENCOR/tree/3.0-Infrastructure)  
+### 6.3 Describe the high-level principles and benefits of a data modeling language, such as YANG  
 
 
-### 4.0 [Network Assurance](https://github.com/network-dluong/CCNP-ENCOR/tree/4.0-Network-Assurance)  
+### 6.4 Describe APIs for Cisco DNA Center and vManage  
 
 
-### 5.0 [Security](https://github.com/network-dluong/CCNP-ENCOR/tree/5.0-Security)  
+### 6.5 Interpret REST API response codes and results in payload using Cisco DNA Center and RESTCONF  
 
 
-### 6.0 Automation  
+### 6.6 Construct EEM applet to automate configuration, troubleshooting, or data collection  
+
+
+### 6.7 Compare agent vs. agentless orchestration tools, such as Chef, Puppet, Ansible, and SaltStack  
+
+
+
