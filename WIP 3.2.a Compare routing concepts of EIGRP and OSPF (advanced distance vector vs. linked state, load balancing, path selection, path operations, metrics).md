@@ -55,6 +55,7 @@
 | EIGRP (external) | 170 |
 | Internal BGP (iBGP) | 200 |
 
+
 ## EIGRP
 | **Term** | **Definition** |
 | --- | --- |
@@ -63,4 +64,23 @@
 | Feasible Distance (FD) | The metric value for the lowest-metric path to reach a destination |
 | Reported Distance (RD) | The distance reported by a router to reach a prefix. The reported distance value is the feasible distance for the advertising router |
 | Feasibility Condition | For route to be considered a backup route, the RD received for that route must be less than the FD calculated locally. This logic guarantees a loop-free path |
-| Feasible Successor | A route that satisfies the feasibility condition and is maintained as a backup route. It ensures that the backup route is loop-free | 
+| Feasible Successor | A route that satisfies the feasibility condition and is maintained as a backup route. It ensures that the backup route is loop-free |  
+
+* EIGRP contains a topology table which is different from a true distance vector routing table. The table contains:
+ * Network prefix
+ * EIGRP neighbors that have advertised that prefix
+ * Metrics from each neighbor
+ * Values used for calculating the metric
+
+
+## EIGRP Neighbors  
+| **Type** | **Packet Name** | **Function** |
+| --- | --- | --- |
+| 1 | Hello | Used for discovery of EIGRP neighbors and for detecting when a neighbor is no longer available |
+| 2 | Request | Used to get specific information from one or more neighbors |
+| 3 | Update | Used to transmit routing and reachability information with other EIGRP neighbors |
+| 4 | Query | Sent out to search for another path during convergence |
+| 5 | Reply | Sent in response to a query packet |  
+
+
+## Path Metric Calculation  
