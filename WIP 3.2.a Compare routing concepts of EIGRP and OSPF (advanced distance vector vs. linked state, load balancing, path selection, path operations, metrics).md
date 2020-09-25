@@ -107,3 +107,32 @@
 
 
 ## OSPF  
+* provides scalability for the routing table by using multiple OSPF areas within routing domain  
+* Area 0 is the backbone, which all other areas must connect  
+* Non-backbone areas advertise routes into backbone, and backbone then advertises routes into other non-backbone areas  
+* All routers in the same area has identical area LSDBs  
+* OSPF process numbers are locally significant and do not have to match among routers  
+| **Type** | **Packet Name** | **Functional Overview** |
+| --- | --- | --- |
+| 1 | Hello | For discovering and maintaining neighbors. Packets are sent periodically on all OSPF interfaces |
+| 2 | Database Description (DBD or DDP) | For summarizing database contents. Packets are exchanged when an OSPF adjacency is first formed, and are used to desribe contents of LSDB |
+| 3 | Link-State Request (LSR) | For database downloads. When router thinks that part of its LSDB is stale, it may request a portion of neighbor's database |
+| 4 | Link-State Update (LSU) | For database updates. This is an explicit LSA for a specific network link and sent in direct response to an LSR |
+| 5 | Link-State Ack | For flooding acknowledgements. Sent in response to the flooding of LSAs |  
+* Router ID - 32-bit number that uniquely identifies an OSPF router, must be unique for each process in a domain  
+* Neighbor states - Down, Attempt, Init, 2-Way, ExStart, Exchange, Loading, Full  
+
+
+## OSPF Designated Router and Backup Designated Router  
+ * Number of adjacencies: n(n - 1)/2  
+ * Designated Router (DR):  
+  * Router on the broadcast segment  
+  * Reduces number of OSPF adjacencies by forming full OSPF adjacency with DR only  
+  * Responsible for flooding updates to all OSPF routers on segment as updates occur  
+ * Back Designated Router (BDR):  
+  * Becomes new DR when original DR fails  
+  * BDR also forms full OSPF adjacencies with OSPF routers on segment  
+1. All OSPF routers (DR, BDR, DROTHER) on segment form full OSPF adjacencies with DR and BDR  
+2. As OSPF router learns of a new route, it sends updated LSA to ALLDRouters address, which only DR and BDR receive and process  
+3. DR sends unicast acknowledgement to router that sent the initial LSA update  
+4. DR floods LSA to all routers on segment via the ALLSPFRouters address  
