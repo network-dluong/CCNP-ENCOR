@@ -83,7 +83,7 @@
 
 
 ## OSPF Configuration  
-* to define OSPF process:  
+* To define OSPF process:  
 > **router ospf (*process-id*)**  
 * Network statement uses wildcard mask:  
 > **network (*ip-address*) (*wildcard-mask*) area (*area-id*)**  
