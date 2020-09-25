@@ -9,7 +9,7 @@
 
 ### 3.2 [*Layer 3*](https://github.com/network-dluong/CCNP-ENCOR/blob/3.0-Infrastructure/3.2%20Layer%203.md)  
 3.2.a [Compare routing concepts of EIGRP and OSPF (advanced distance vector vs. linked state, load balancing, path selection, path operations, metrics)](https://github.com/network-dluong/CCNP-ENCOR/blob/3.0-Infrastructure/3.2.a%20Compare%20routing%20concepts%20of%20EIGRP%20and%20OSPF%20(advanced%20distance%20vector%20vs.%20linked%20state,%20load%20balancing,%20path%20selection,%20path%20operations,%20metrics).md)  
-3.2.b Configure and verify simple OSPF environments, including multiple normal areas, summarization, and filtering (neighbor adjacency, point-to-point and broadcast network types, and passive interface)  
+3.2.b [Configure and verify simple OSPF environments, including multiple normal areas, summarization, and filtering (neighbor adjacency, point-to-point and broadcast network types, and passive interface)](https://github.com/network-dluong/CCNP-ENCOR/blob/3.0-Infrastructure/3.2.b%20Configure%20and%20verify%20simple%20OSPF%20environments,%20including%20multiple%20normal%20areas,%20summarization,%20and%20filtering%20(neighbor%20adjacency,%20point-to-point%20and%20broadcast%20network%20types,%20and%20passive%20interface).md)  
 3.2.c Configure and verify eBGP between directly connected neighbors (best path selection algorithm and neighbor relationships)  
 
 
