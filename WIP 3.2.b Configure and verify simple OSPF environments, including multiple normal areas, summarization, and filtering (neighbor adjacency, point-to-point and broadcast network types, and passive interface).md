@@ -56,3 +56,40 @@
 > **show ip ospf interface**  
 
 
+## OSPF Network Types  
+* **Broadcast**:  
+ * Hello: 10, Wait: 40, Dead: 40  
+ * Non-Broadcast - Hello: 30, Wait: 120, Dead: 120
+ * OSPF network type is set to broadcast by default for Ethernet interfaces  
+ * DR is required because multiple nodes can exist on a segment and LSA flooding needs to be controlled  
+ * To override configured setting and statically set an interface as OSPF broadcast network type:  
+ > **ip ospf network broadcast**  
+ 
+* **Point-to-Point Networks**:  
+ * Hello: 10, Wait: 40, Dead: 40  
+ * Point-to-Multipoint - Hello: 30, Wait: 120, Dead: 120
+ * Network circuit that only allows two devices to communicate and do not use ARP  
+ * OSPF is set to P2P by default for serial interfaces (HDLC or PPP encapsulation), GRE tunnels, and P2P Frame Relay sub-interfaces  
+ * Forms OSPF adjacency quickly because DR election is bypassed and there is no wait timer  
+ * To set interface as OSPF P2P:  
+ > **ip ospf network point-to-point  
+ 
+ * **Loopback Networks**:  
+ * Enabled by default and can only be used on loopback interfaces  
+ * IP address is always advertised with /32 prefix length even if configured otherwise  
+  
+  
+ ## OSPF Areas  
+ * Logical grouping of routers (or router interfaces) that is set at the interface level  
+ * Area 0 is the backbone  
+ * **Area Border Routers (ABR)** are OSPF routers connected to Area 0 and another OSPF Area  
+   * Responsible for advertising routes from one area and injecting them into another OSPF area  
+   * Will always need to participate in Area 0  
+ 
+ * **OSPF Route Types**:  
+  * Intra-area routes - network routes that are learned from other OSPF routers  
+  * Inter-area routes - network routes that are learned from other OSPF routers from a different area using an ABR  
+  
+  
+  ## Link-State Announcements  
+  
