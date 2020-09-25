@@ -94,8 +94,8 @@
 * When EIGRP detects lost successor, the feasible successor becomes the new successor route  
 * If a feasible successor is not available for a prefix, DUAL must perform a new route calculation (route state changes from passive (P) to active (A))  
 * Router receiving a query packet:  
- * Might reply to query that the router does not have a route to the prefix  
- * If query did not come from successor for that route, it detects the delay set for infinity but ignore it because it did not come from successor  
+  * Might reply to query that the router does not have a route to the prefix  
+  * If query did not come from successor for that route, it detects the delay set for infinity but ignore it because it did not come from successor  
  if query came from successor for the route, the receiving router detects the delay set for infinity, sets prefix as active, and sends query packet to all downstream EIGRP neigbors  
  
  
