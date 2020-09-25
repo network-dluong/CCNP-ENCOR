@@ -133,7 +133,62 @@
  * Back Designated Router (BDR):  
    * Becomes new DR when original DR fails  
    * BDR also forms full OSPF adjacencies with OSPF routers on segment  
+   * DROTHER routers do not establish full adjacency with other DROTHER routers
 1. All OSPF routers (DR, BDR, DROTHER) on segment form full OSPF adjacencies with DR and BDR  
 2. As OSPF router learns of a new route, it sends updated LSA to ALLDRouters address, which only DR and BDR receive and process  
 3. DR sends unicast acknowledgement to router that sent the initial LSA update  
 4. DR floods LSA to all routers on segment via the ALLSPFRouters address  
+
+
+## OSPF Configuration  
+* to define OSPF process:  
+> **router ospf (*process-id*)**  
+* Network statement uses wildcard mask:  
+> **network (*ip-address*) (*wildcard-mask*) area (*area-id*)**  
+* Interface-specific configuration:  
+> **ip ospf (*process-id*) area (*area-id*) [secondaries none]**  
+* To statically set the Router ID:  
+> **router-id (*router-id*)**  
+* To restart OSPF process on router so it can use new RID:  
+> **clear ip ospf process**  
+* To configure passive interface:  
+> **passive (*int-id*)**  
+> **no passive (*int-id*)**  
+* To configure all interfaces as passive:  
+> **passive interface default**  
+* To verify OSPF:  
+> **show ip ospf interface [brief | (*int-id*)]**  
+* To verify OSPF Neighbors:  
+> **show ip ospf neighbor [detail]**  
+* To verify OSPF routes:  
+> **show ip route ospf**  
+* To advertise default rote into OSPF domain:  
+> **default-information originate [always] **[metric (*metric-value*)]** **[metric-type (*type-value*)]**  
+* **always** - advertises default route even if it does not exist in RIB
+
+
+## Requirements for Neighbor Adjacency  
+* RIDs must be unique between devices  
+* Interfaces must share a common subnet  
+* MTUs on the interfaces must match. OSPF does not support fragmentation  
+* Area ID must match for the segment  
+* DR enablement must match for the segment  
+* OSPF hello and dead timers must match for the segment  
+* Authentication type and credentials must match for the segment  
+* Area type flags must match for the segment  
+
+
+## Common OSPF Optimizations  
+* Link Costs = Reference Bandwidth / Interface Bandwidth  
+ * Default reference bandwidth is 100 Mbps  
+ 
+| **Interface Type** | **OSPF Cost** |
+| --- | --- |
+| T1 | 64 |
+| Ethernet | 10 |
+| FastEthernet | 1 |
+| GigabitEthernet | 1 |
+| 10 GigabitEthernet | 1 |  
+* To change reference bandwidth (needs to be changed on all OSPF routers):  
+> **auto-cost reference-bandwidth (*bandwidth-mbps*)**  
+> **ip ospf cost (*1-65535*)**  
