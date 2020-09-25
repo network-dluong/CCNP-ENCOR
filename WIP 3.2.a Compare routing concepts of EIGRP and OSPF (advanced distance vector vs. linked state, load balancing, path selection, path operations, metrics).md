@@ -163,7 +163,7 @@
 * To verify OSPF routes:  
 > **show ip route ospf**  
 * To advertise default rote into OSPF domain:  
-> **default-information originate [always] **[metric (*metric-value*)]** **[metric-type (*type-value*)]**  
+> **default-information originate** **[always]** **[metric (*metric-value*)]** **[metric-type (*type-value*)]**  
 * **always** - advertises default route even if it does not exist in RIB
 
 
