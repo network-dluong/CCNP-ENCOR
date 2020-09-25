@@ -67,7 +67,7 @@
  * OSPF is set to P2P by default for serial interfaces (HDLC or PPP encapsulation), GRE tunnels, and P2P Frame Relay sub-interfaces  
  * Forms OSPF adjacency quickly because DR election is bypassed and there is no wait timer  
  * To set interface as OSPF P2P:  
- > **ip ospf network point-to-point  
+ > **ip ospf network point-to-point**  
  
  * **Loopback Networks**:  
  * Enabled by default and can only be used on loopback interfaces  
@@ -78,12 +78,12 @@
  * Logical grouping of routers (or router interfaces) that is set at the interface level  
  * Area 0 is the backbone  
  * **Area Border Routers (ABR)** are OSPF routers connected to Area 0 and another OSPF Area  
-   * Responsible for advertising routes from one area and injecting them into another OSPF area  
-   * Will always need to participate in Area 0  
+    * Responsible for advertising routes from one area and injecting them into another OSPF area  
+    * Will always need to participate in Area 0  
  
  * **OSPF Route Types**:  
-  * Intra-area routes - network routes that are learned from other OSPF routers  
-  * Inter-area routes - network routes that are learned from other OSPF routers from a different area using an ABR  
+   * Intra-area routes - network routes that are learned from other OSPF routers  
+   * Inter-area routes - network routes that are learned from other OSPF routers from a different area using an ABR  
   
   
   ## Link-State Announcements  
