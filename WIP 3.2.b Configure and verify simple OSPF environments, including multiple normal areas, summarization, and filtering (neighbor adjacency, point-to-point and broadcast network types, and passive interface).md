@@ -1,13 +1,11 @@
 ## OSPF Configuration  
 * To define OSPF process:  
 > **router ospf (*process-id*)**  
-* Network statement uses wildcard mask:  
+* Network statement uses wildcard mask, or Interface-specific configuration:  
 > **network (*ip-address*) (*wildcard-mask*) area (*area-id*)**  
-* Interface-specific configuration:  
 > **ip ospf (*process-id*) area (*area-id*) [secondaries none]**  
-* To statically set the Router ID:  
-> **router-id (*router-id*)**  
-* To restart OSPF process on router so it can use new RID:  
+* To statically set the Router ID and restart the OSPF process:  
+> **router-id (*router-id*)**    
 > **clear ip ospf process**  
 * To configure passive interface, no passive, or defaulting all as passive:  
 > **passive (*int-id*)**  
