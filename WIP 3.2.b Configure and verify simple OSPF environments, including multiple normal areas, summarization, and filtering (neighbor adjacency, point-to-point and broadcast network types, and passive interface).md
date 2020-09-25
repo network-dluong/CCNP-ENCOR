@@ -50,7 +50,7 @@
 * To change reference bandwidth (needs to be changed on all OSPF routers):  
 > **auto-cost reference-bandwidth (*bandwidth-mbps*)**  
 > **ip ospf cost (*1-65535*)**  
-* To modify Hello Timer, Dead Interval Timer, and very Timers:  
+* To modify Hello Timer, Dead Interval Timer, and verify Timers:  
 > **ip ospf hello-interval (*1-65535*)**  
 > **ip ospf dead-interval (*1-65535*)**  
 > **show ip ospf interface**  
