@@ -9,16 +9,13 @@
 > **router-id (*router-id*)**  
 * To restart OSPF process on router so it can use new RID:  
 > **clear ip ospf process**  
-* To configure passive interface:  
+* To configure passive interface, no passive, or defaulting all as passive:  
 > **passive (*int-id*)**  
 > **no passive (*int-id*)**  
-* To configure all interfaces as passive:  
 > **passive interface default**  
-* To verify OSPF:  
+* To verify OSPF, OSPF Neighbors, and OSPF routes:  
 > **show ip ospf interface [brief | (*int-id*)]**  
-* To verify OSPF Neighbors:  
 > **show ip ospf neighbor [detail]**  
-* To verify OSPF routes:  
 > **show ip route ospf**  
 * To advertise default rote into OSPF domain:  
 > **default-information originate** **[always]** **[metric (*metric-value*)]** **[metric-type (*type-value*)]**  
