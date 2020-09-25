@@ -126,12 +126,12 @@
 ## OSPF Designated Router and Backup Designated Router  
  * Number of adjacencies: n(n - 1)/2  
  * Designated Router (DR):  
-  * Router on the broadcast segment  
-  * Reduces number of OSPF adjacencies by forming full OSPF adjacency with DR only  
-  * Responsible for flooding updates to all OSPF routers on segment as updates occur  
+   * Router on the broadcast segment  
+   * Reduces number of OSPF adjacencies by forming full OSPF adjacency with DR only  
+   * Responsible for flooding updates to all OSPF routers on segment as updates occur  
  * Back Designated Router (BDR):  
-  * Becomes new DR when original DR fails  
-  * BDR also forms full OSPF adjacencies with OSPF routers on segment  
+   * Becomes new DR when original DR fails  
+   * BDR also forms full OSPF adjacencies with OSPF routers on segment  
 1. All OSPF routers (DR, BDR, DROTHER) on segment form full OSPF adjacencies with DR and BDR  
 2. As OSPF router learns of a new route, it sends updated LSA to ALLDRouters address, which only DR and BDR receive and process  
 3. DR sends unicast acknowledgement to router that sent the initial LSA update  
