@@ -51,7 +51,31 @@
 * To view logical interface:  
 > **show interface port-channel (*port-channel-id*)**  
 
-## LACP Fast  
+* LACP Fast:  
+  * Link can be identified and removed in 3 seconds compared to 90 seconds from LACP standard  
+> **lacp rate fast**  
 
+* Minimum number of port-channel member interfaces:  
+  * Does not need to be configured on both devices to work properly, but is recommended  
+  > **lacp min-links (*min-links*)**  
+  
+* Maximum number of port-channel member interfaces:  
+  * Ensure that the active member interface count proceeds with power of two to accomodate load-balancing hashes
+  > **lacp max-bundle (*max-links*)**  
+  
+* LACP System Priority:  
+  * Identifies which switch is the master switch for a port channel  
+  * Master switch is responsible for choosing which member interfaces are active when there are more than the maximum number of member interfaces associated with a port-channel interface  
+  * Switch with lower system priority is preferred  
+  > **lacp system-priority (*priority*)**  
+  
+* LACP Interface Priority:  
+  * Enables master switch to choose which member interfaces are active when there are more member interfaces than the maximum number of member interfaces for a port-channel  
+  * Port with lower port priority is preferred  
+  > **lacp port-priority (*priority*)**  
+  
+  
+  ## Troubleshooting EtherChannel Bundles  
+  
 
 
