@@ -86,5 +86,24 @@
    * Inter-area routes - network routes that are learned from other OSPF routers from a different area using an ABR  
   
   
-  ## Link-State Announcements  
+ ## Summarization of Routes  
+ * Splitting up OSPF routing domain into multiple areas reduces size of the LSDB for each area  
+ * Summarizing network prefixes can reduce size of the LSDB  
+ * Interarea Summarization:  
+  * Reduces number of type 3 LSAs that an ABR advertises into an area wiehn it receives type 1 LSAs  
+  * OSPF behaves like EIGRP and checks every prefix within summarization range when a matching type 1 LSA is added or removed  
+  * To define summarization range and associated area:  
+  > **area (*area-id*) range (*network*) (*subnet-mask*)** **[advertise | not-advertise]** **[cost (*metric*)]**  
   
+## Route Filtering  
+* Method for selectively identifying routes that are advertised or received from neighbor routers  
+* Used to manipulate traffic flows, reduce memory utilization, or improve security  
+* Filtering with summarization:  
+  * **not advertise** - prevents creation of type 3 LSAs for any networks in range  
+* Area Filtering:  
+  * Can occur in either direction on the ABR  
+  * To enable OSPF area filtering on ABR:  
+ > **area (*area-id*) filter-list prefix (*prefix-list-name*) {in | out}**  
+* Local OSPF Filtering:  
+  * Distribute list - prevents type 3 LSAs coming from backbone frome being regenerated into nonbackbone areas on an ABR
+ > **distribute-list {*(acl-number)* | *(acl-name)* | prefix (*prefix-list-name*) | routep-map (*route-map-name*)} in  
