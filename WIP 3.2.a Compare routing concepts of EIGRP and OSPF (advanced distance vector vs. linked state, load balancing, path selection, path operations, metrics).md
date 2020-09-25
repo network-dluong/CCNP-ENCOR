@@ -112,6 +112,7 @@
 * Non-backbone areas advertise routes into backbone, and backbone then advertises routes into other non-backbone areas  
 * All routers in the same area has identical area LSDBs  
 * OSPF process numbers are locally significant and do not have to match among routers  
+
 | **Type** | **Packet Name** | **Functional Overview** |
 | --- | --- | --- |
 | 1 | Hello | For discovering and maintaining neighbors. Packets are sent periodically on all OSPF interfaces |
