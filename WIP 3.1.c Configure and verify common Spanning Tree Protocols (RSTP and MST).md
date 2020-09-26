@@ -68,7 +68,7 @@
 
 ## Locating Blocked Designated Switch Ports  
 * To prevent forwarding loop, the following steps will calculate which ports should be blocked between two non-root switches:  
-1. The interface is a designated port and must not be considered an RP  
+1. The interface is a DP and must not be considered an RP  
 2. The switch with lower path cost to root bridge forwards packets, and the one with the higher path cost blocks packets. In case of a tie, go to next step  
 3. The system priority of the local switch is compared to the system priority of remote switch. Local port is moved to blocking state if remote system priority is lower than that of local switch. In case of a tie, go to next step  
 4. The system MAC address of local switch is compared to system priority of remote switch. Local designated port is moved to blocking state if remote system MAC address is lower than that of local switch  
