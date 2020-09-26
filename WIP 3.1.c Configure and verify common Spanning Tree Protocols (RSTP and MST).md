@@ -29,7 +29,7 @@
   * **Hello time** - time that a BPDU is advertised out of port (default value is 2 seconds but can be changed from 1 to 10)  
   > **spanning-tree vlan (*vlan-id*) hello-time (*1-10*)**  
   * **Forward delay** - amount of time that port stays in listening and learning state (default value is 15 seconds but can be changed from 15 to 30)  
-  > **spanning-tree vlan (*vlan-id*) forward-time (*time*)**  
+  > **spanning-tree vlan (*vlan-id*) forward-time (*15-30*)**  
   
   
   ## STP Path Cost  
