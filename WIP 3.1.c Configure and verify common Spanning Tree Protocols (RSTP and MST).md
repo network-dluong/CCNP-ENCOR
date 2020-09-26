@@ -169,3 +169,28 @@
   * Most network designs do not require BPDU filter  
   
 * STP Loop Guard:  
+  * Prevents any alternative or RPs from becoming DPs (ports toward downstream switches) due to loss of BPDUs on the RP  
+  * Places the original port in an ErrDisabled state whil BPDUs are not being received  
+  * Can be enabled globally, or interface specific:  
+  > **spanning-tree loopguard default**  
+  > **spanning-tree guard loop**  
+  * Loop guard should not be enabled on portfast enabled ports because it directly conflicts with the root/alternate port logic  
+  * To view inconsistent ports:  
+  > **show spanning-tree inconsistentports**  
+
+* Unidirectional Link Detection (UDLD):  
+  * Allows for the bidirectional monitoring of fiber-optic cables  
+  * Transmits UDLD packets to neighbor device which includes system ID and port ID of the interface  
+  * Receiving device repeats this information back to the originating device  
+    * **Normal** - if a frame is not acknowledged, the link is considered underdetermined and the port remains active  
+    * **Aggressive** - When a fram is not acknowledged, the switch sends another eight packets in 1-second intervals. If those packets are not acknowledged, the port is placed into an error state  
+  * To enable UDLD on any small form-factor pluggable (SFP) based port, or port-by-port basis, and to disable on a specific port and recovery:  
+  > **udld enable [aggressive]**  
+  > **udld port [aggressive]**  
+  > **udld port disable**  
+  > **udld recovery [interval (*time*)]**  
+  * UDLD must be enabled on the remote switch as well. To verify neighborship, and view more detailed information:  
+  > **show udld neighbors**  
+  > **show udld (*int-id*)**  
+  
+  
