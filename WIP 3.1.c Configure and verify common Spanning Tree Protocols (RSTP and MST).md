@@ -105,5 +105,16 @@
 
 
 ## STP Topology Tuning  
-
+* Root Bridge Placement:  
+  * Ideally the root bridge is placed on a core switch, and a secondary root bridge is designated to minimize changes to overall STP  
+  * Accomplished by lowering system priority on the root bridge to lowest value possible, raising secondary root bridge to a value slightly higher than root bridge, and increasing system priority on all other switches
+  * Priority is set with either of these two commands:  
+  > **spanning-tree vlan (*vlan-id*) priority (*0 - 61,440*)**  
+  > **spanning-tree vlan (*vlan-id*) root {primary | secondary}** **[diameter (*diameter*)]**  
+  * **Priority** is in increments of 4,096; **Primary** is 24,576; **Secondary** is 28,672  
+  * (Optional) **diameter** - tunes STP convergence and modifies the timers  
+  * Best way to prevent devices from taking over STP root role is to set the primary root switch with a priority of 0 and seoncdary root switch with a priority of 4,096  
   
+* To modify the STP forwarding path:  
+> **spanning-tree** **[vlan (*vlan-id*)]** **cost (*cost*)**  
+* You can lower a path that is currently an alternate port to make it designated port, or raise the cost of a designated port and turn it into a blocking port  
