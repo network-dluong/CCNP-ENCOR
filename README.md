@@ -3,7 +3,7 @@
 
 ### 3.1 *Layer 2*  
 3.1.a [Troubleshoot static and dynamic 802.1q trunking protocols](https://github.com/network-dluong/CCNP-ENCOR/blob/3.0-Infrastructure/3.1.a%20Troubleshoot%20static%20and%20dynamic%20802.1q%20trunking%20protocols.md)  
-3.1.b [Troubleshoot static and dynamic EtherChannels]  
+3.1.b [Troubleshoot static and dynamic EtherChannels](https://github.com/network-dluong/CCNP-ENCOR/blob/3.0-Infrastructure/3.1.b%20Troubleshoot%20static%20and%20dynamic%20EtherChannels.md)  
 3.1.c Configure and verify common Spanning Tree Protocols (RSTP and MST)  
 
 
