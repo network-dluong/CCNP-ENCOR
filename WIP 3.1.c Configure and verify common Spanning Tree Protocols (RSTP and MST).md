@@ -50,7 +50,7 @@
   
   
 ## Root Bridge Election  
-* If neighbor's configuration BPDU is inferioer, the switch ignores that BPDU  
+* If neighbor's configuration BPDU is inferior, the switch ignores that BPDU  
 * If neighbor's configuration BPDU is preferred, the switch updates its BPDUs to include the new root bridge identifier with a new root path cost that correlates to the total path cost to reach the new root bridge  
 * STP deems a switch more preferable if priority in the bridge identifier is lower than other switch's  
 * If priority is the same, then switch prefers BPDU with lower system MAC address  
