@@ -75,7 +75,14 @@
   > **lacp port-priority (*priority*)**  
   
   
-  ## Troubleshooting EtherChannel Bundles  
-  
-
+## Troubleshooting EtherChannel Bundles  
+* Following configuration settings must match on member interfaces:  
+  * Port type - every port in the interface must be configured to be Layer 2 switch port or Layer 3 routed port  
+  * Port mode - all Layer 2 port channels must be configured as either access port or trunk port (cannot mix)  
+  * Native VLAN - member interfaces on Layer 2 trunk port channel muct be configured with same native VLAN  
+  > **switchport trunk native vlan (*vlan-id*)**  
+  * Allowed VLAN - member interfaces on Layer 2 trunk port channel must be configured to support the same VLANs  
+  > **switchport trunk allowed (*vlan-id*)**  
+  * Speed - duplex must be the same  
+  * MTU - all Layer 3
 
