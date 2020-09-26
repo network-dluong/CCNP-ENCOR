@@ -1,7 +1,8 @@
 ## Spanning Tree Protocol (STP) 802.1D  
 * Enables switches to become aware of other switches through the advertisement and receipt of bridge protocol data units (BPDUs)  
 * Builds Layer 2 loop-free topology by blocking traffic on redundant ports  
-* 802.1D Port States:  
+
+* **802.1D Port States**:  
   * **Disabled** - shut down  
   * **Blocking** - switch port is enabled but not forwarding any traffic to ensure no loops, and does not modify the MAC address table  
   * **Listening** - switch port transitioned from blocking state and now sends or receives BPDUs, but cannot forward any other network traffic  
@@ -9,12 +10,12 @@
   * **Forwarding** - switch port can forward all network traffic and updates MAC address table  
   * **Broken** - switch has detected a configuration or operation problem on a port, and port discards packets as problem exists  
   
-* 802.1D Port Types:  
+* **802.1D Port Types**:  
   * **Root port (RP)** - network port that connects to the root bridge or an upstream switch (only one RP per VLAN)  
   * **Designated port (DP)** - network port that receives and forwards BPDU frames to other switches, and provides connectivity to downstream devices and switches (only one active DP on a link)  
   * **Blocking port** - network port that is not forwarding traffic because of STP calculations  
   
-* STP Terminology:  
+* **STP Terminology**:  
   * **Root bridge** - all ports in forwarding state and are DPs  
   * **Bridge protocol data unit (BPDU)** - network packets used for network switches to identify a hierarchy and notify changes in topology (destination MAC address 01:80:c2:00:00:00)  
     * Configuration BPDU - used to identify root bridge, RPs, DPs, and blocking ports  
@@ -31,7 +32,7 @@
   * **Forward delay** - amount of time that port stays in listening and learning state (default value is 15 seconds but can be changed from 15 to 30)  
   > **spanning-tree vlan (*vlan-id*) forward-time (*15-30*)**  
   
-* STP Path Cost:   
+* **STP Path Cost**:   
   * **Short mode** - 16-bit value with reference value of 20 Gbps (default)  
   * **Long mode** - 32-bit value with reference value of 20 Tbps  
   > **spanning-tree pathcost method long**  
@@ -48,7 +49,7 @@
   | 10 Tbps | 1 | 2 |
   
   
-* Root Bridge Election:  
+* **Root Bridge Election**:  
   * If neighbor's configuration BPDU is inferior, the switch ignores that BPDU  
   * If neighbor's configuration BPDU is preferred, the switch updates its BPDUs to include the new root bridge identifier with a new root path cost that correlates to the total path cost to reach the new root bridge  
   * STP deems a switch more preferable if priority in the bridge identifier is lower than other switch's  
@@ -56,7 +57,7 @@
  > **show spanning-tree root**  
 
 
-* Locating Root Ports:  
+* **Locating Root Ports**:  
   * The Root Port (RP) is selected through the following steps (the next step is used in the event of a tie):  
 1. The interface associated to lowest path cost is more preferred  
 2. The interface associated to the lowest system priority of the advertising switch is preferred  
@@ -65,7 +66,7 @@
 5. When multiple links are associated to the same switch, the lower port number from the advertising switch is preferred  
 
 
-* Locating Blocked Designated Switch Ports:  
+* **Locating Blocked Designated Switch Ports**:  
   * To prevent forwarding loop, the following steps will calculate which ports should be blocked between two non-root switches:  
 1. The interface is a DP and must not be considered an RP  
 2. The switch with lower path cost to root bridge forwards packets, and the one with the higher path cost blocks packets. In case of a tie, go to next step  
@@ -78,23 +79,23 @@
 
 
 ## Rapid Spanning Tree Protocol (RSPT) 802.1W
-* Port States:  
+* **Port States**:  
   * **Discarding** - switch port is enabled, but port is not forwarding any traffic to prevent loops (combines Disabled, Blocking, and Listening)  
   * **Learning** - switch port modifies MAC address table with any network traffic it receives, but does not forward any other network traffic besides BPDUs  
   * **Forwarding** - switch port forwards all network traffic and updates MAC address table  
   
-* Port Roles:  
+* **Port Roles**:  
   * **Root Port (RP)** - network port that connects to root switch or upstream switch (only one RP per VLAN)  
   * **Designated Port (DP)** - network port that receives and forwards frames to other switches, and provides connectivity to downstream devices and switches (only one active DP on a link)  
   * **Alternate port** - network port that provides alternate connectivity toward root switch through a different switch  
   * **Backup port** - network port that provides link redundancy toward current root switch (only exists when multiple links connect between the same switches). It cannot guarantee connectivity to root bridge if upstream switch fails  
 
-* Port Types:  
+* **Port Types**:  
   * **Edge port** - port at the edge of the network where hosts connect to Layer 2 topology with one interface and cannot form a loop (correlates to ports that have STP portfast enabled)  
   * **Root port** - port that has best path cost toward root bridge (only one RP per switch)  
   * **Point-to-point port** - any port that connects to another RSTP switch with full duplex (full duplex links do not permit more than two devices on a network segment)  
 
-* RSTP Topology:  
+* **RSTP Topology**:  
 1. When first two switches connect to each other, they verify that they are connected with point-to-point link by checking the full-duplex status  
 2. They establish a handshake with each other to advertise a proposal that their interface should be the DP for that port  
 3. There is only one DP per segment, and each switch identifies itself as superior or inferior  
@@ -105,7 +106,7 @@
 
 
 ## STP Topology Tuning  
-* Root Bridge Placement:  
+* **Root Bridge Placement**:  
   * Ideally the root bridge is placed on a core switch, and a secondary root bridge is designated to minimize changes to overall STP  
   * Accomplished by lowering system priority on the root bridge to lowest value possible, raising secondary root bridge to a value slightly higher than root bridge, and increasing system priority on all other switches
   * Priority is set with either of these two commands:  
@@ -123,7 +124,7 @@
 
 
 ## STP Protection Mechanisms  
-* Some common scenarios for Layer 2 forwarding loops:  
+* Some **common scenarios** for Layer 2 forwarding loops:  
   * STP is disabled on a switch  
   * A misconfigured load balancer that transmits traffic out multiple ports with the same MAC address  
   * A misconfigured virtual switch that bridges two physical ports (virtual switches typically do not partake in STP)  
