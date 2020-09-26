@@ -115,6 +115,7 @@
   * (Optional) **diameter** - tunes STP convergence and modifies the timers  
   * Best way to prevent devices from taking over STP root role is to set the primary root switch with a priority of 0 and seoncdary root switch with a priority of 4,096  
   
-* To modify the STP forwarding path:  
-> **spanning-tree** **[vlan (*vlan-id*)]** **cost (*cost*)**  
 * You can lower a path that is currently an alternate port to make it designated port, or raise the cost of a designated port and turn it into a blocking port  
+  * To modify the STP forwarding path:  
+> **spanning-tree** **[vlan (*vlan-id*)]** **cost (*cost*)**  
+
