@@ -1,4 +1,4 @@
-## Spanning Tree Protocol (STP)  
+## Spanning Tree Protocol (STP) 802.1D  
 * Enables switches to become aware of other switches through the advertisement and receipt of bridge protocol data units (BPDUs)  
 * Builds Layer 2 loop-free topology by blocking traffic on redundant ports  
 * 802.1D Port States:  
@@ -31,8 +31,7 @@
   * **Forward delay** - amount of time that port stays in listening and learning state (default value is 15 seconds but can be changed from 15 to 30)  
   > **spanning-tree vlan (*vlan-id*) forward-time (*15-30*)**  
   
-  
-  ## STP Path Cost  
+* STP Path Cost:   
   * **Short mode** - 16-bit value with reference value of 20 Gbps (default)  
   * **Long mode** - 32-bit value with reference value of 20 Tbps  
   > **spanning-tree pathcost method long**  
@@ -49,16 +48,16 @@
   | 10 Tbps | 1 | 2 |
   
   
-## Root Bridge Election  
-* If neighbor's configuration BPDU is inferior, the switch ignores that BPDU  
-* If neighbor's configuration BPDU is preferred, the switch updates its BPDUs to include the new root bridge identifier with a new root path cost that correlates to the total path cost to reach the new root bridge  
-* STP deems a switch more preferable if priority in the bridge identifier is lower than other switch's  
-* If priority is the same, then switch prefers BPDU with lower system MAC address  
-> **show spanning-tree root**  
+* Root Bridge Election:  
+  * If neighbor's configuration BPDU is inferior, the switch ignores that BPDU  
+  * If neighbor's configuration BPDU is preferred, the switch updates its BPDUs to include the new root bridge identifier with a new root path cost that correlates to the total path cost to reach the new root bridge  
+  * STP deems a switch more preferable if priority in the bridge identifier is lower than other switch's  
+  * If priority is the same, then switch prefers BPDU with lower system MAC address  
+ > **show spanning-tree root**  
 
 
-## Locating Root Ports  
-* The Root Port (RP) is selected through the following steps (the next step is used in the event of a tie):  
+* Locating Root Ports:  
+  * The Root Port (RP) is selected through the following steps (the next step is used in the event of a tie):  
 1. The interface associated to lowest path cost is more preferred  
 2. The interface associated to the lowest system priority of the advertising switch is preferred  
 3. The interface associated to the lowest system MAC address of the advertising switch is preferred  
@@ -66,11 +65,45 @@
 5. When multiple links are associated to the same switch, the lower port number from the advertising switch is preferred  
 
 
-## Locating Blocked Designated Switch Ports  
-* To prevent forwarding loop, the following steps will calculate which ports should be blocked between two non-root switches:  
+* Locating Blocked Designated Switch Ports:  
+  * To prevent forwarding loop, the following steps will calculate which ports should be blocked between two non-root switches:  
 1. The interface is a DP and must not be considered an RP  
 2. The switch with lower path cost to root bridge forwards packets, and the one with the higher path cost blocks packets. In case of a tie, go to next step  
 3. The system priority of the local switch is compared to the system priority of remote switch. Local port is moved to blocking state if remote system priority is lower than that of local switch. In case of a tie, go to next step  
 4. The system MAC address of local switch is compared to system priority of remote switch. Local designated port is moved to blocking state if remote system MAC address is lower than that of local switch  
-* To locate a port's STP state:  
-> **show spanning-tree** **[vlan (*vlan id*)]**  
+  * To locate a port's STP state:  
+ > **show spanning-tree** **[vlan (*vlan id*)]**  
+ > **show spanning-tree inteface (*int-id*)** **[detail]**  
+ > **show spanning-tree** **[vlan (*vlan-id*)]** **detail**  
+
+
+## Rapid Spanning Tree Protocol (RSPT) 802.1W
+* Port States:  
+  * **Discarding** - switch port is enabled, but port is not forwarding any traffic to prevent loops (combines Disabled, Blocking, and Listening)  
+  * **Learning** - switch port modifies MAC address table with any network traffic it receives, but does not forward any other network traffic besides BPDUs  
+  * **Forwarding** - switch port forwards all network traffic and updates MAC address table  
+  
+* Port Roles:  
+  * **Root Port (RP)** - network port that connects to root switch or upstream switch (only one RP per VLAN)  
+  * **Designated Port (DP)** - network port that receives and forwards frames to other switches, and provides connectivity to downstream devices and switches (only one active DP on a link)  
+  * **Alternate port** - network port that provides alternate connectivity toward root switch through a different switch  
+  * **Backup port** - network port that provides link redundancy toward current root switch (only exists when multiple links connect between the same switches). It cannot guarantee connectivity to root bridge if upstream switch fails  
+
+* Port Types:  
+  * **Edge port** - port at the edge of the network where hosts connect to Layer 2 topology with one interface and cannot form a loop (correlates to ports that have STP portfast enabled)  
+  * **Root port** - port that has best path cost toward root bridge (only one RP per switch)  
+  * **Point-to-point port** - any port that connects to another RSTP switch with full duplex (full duplex links do not permit more than two devices on a network segment)  
+
+* RSTP Topology:  
+1. When first two switches connect to each other, they verify that they are connected with point-to-point link by checking the full-duplex status  
+2. They establish a handshake with each other to advertise a proposal that their interface should be the DP for that port  
+3. There is only one DP per segment, and each switch identifies itself as superior or inferior  
+4. The inferior switch marks its local port as the RP. It moves all no-edge ports to discarding state (switch has stopped all local switching for non-edge ports)  
+5. The inferior switch sends an agreement to the root bridge, which signifies that synchronization is occurring on that switch  
+6. The inferior and superior switch move their RP to forwarding state  
+7. The inferior switch repeats the process for any downstream switches connected to it  
+
+
+## STP Topology Tuning  
+
+  
