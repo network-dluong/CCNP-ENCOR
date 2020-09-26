@@ -161,7 +161,7 @@
 * BPDU Filter:  
   * Blocks BPDUs from being transmitted out a port. For globally enabled:  
   > **spanning-tree portfast bpdufilter default**  
-  * Port sends a series of 10 to 12 BPDUs. If switch redeives any BPDUs, it checks to identify which switch is more preferred  
+  * Port sends a series of 10 to 12 BPDUs. If switch receives any BPDUs, it checks to identify which switch is more preferred  
     * Preferred switch does not process any BPDUs that it receives, but still transmits to inferior downstream switches  
     * Switch that is not the preferred switch will process BPDUs that are received, but does not transmit BPDUs to superior upstream switch  
   * For interface-specific:  
