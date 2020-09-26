@@ -23,7 +23,7 @@
   * **System priority** - 4-bit value that indicates preference for a switch to be root bridge (default value of 32,768)  
   * **System ID extension** - 12-bit value that indicates VLAN that the BPDU correlates to. System priority + system ID extension (VLAN ID) = part of switch's identification of root bridge  
   * **Root bridge identifier** - combination of root bridge system MAC address, system ID extension (VLAN ID), and system priority of root bridge  
-  * **Local bridge identifer** - combination of local switch's bridge system MAC address, system ID extension (VLAN ID), and system priority of root bridge  
+  * **Local bridge identifier** - combination of local switch's bridge system MAC address, system ID extension (VLAN ID), and system priority of root bridge  
   * **Max age** - maximum length of time that passes before a bridge port saves its BPDU information (dfeault value is 20 seconds but can be changed)  
   > **spanning-tree vlan (*vlan-id*) max-age (*maxage*)**  
   * **Hello time** - time that a BPDU is advertised out of port (default value is 2 seconds but can be changed from 1 to 10)  
