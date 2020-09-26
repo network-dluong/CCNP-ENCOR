@@ -116,6 +116,56 @@
   * Best way to prevent devices from taking over STP root role is to set the primary root switch with a priority of 0 and seoncdary root switch with a priority of 4,096  
   
 * You can lower a path that is currently an alternate port to make it designated port, or raise the cost of a designated port and turn it into a blocking port  
-  * To modify the STP forwarding path:  
+* To modify the STP forwarding path:  
 > **spanning-tree** **[vlan (*vlan-id*)]** **cost (*cost*)**  
+* To modify the port priority:  
+> **spanning-tree** **[vlan (*vlan-id*)]** **port-priority (*priority*)**  
 
+
+## STP Protection Mechanisms  
+* Some common scenarios for Layer 2 forwarding loops:  
+  * STP is disabled on a switch  
+  * A misconfigured load balancer that transmits traffic out multiple ports with the same MAC address  
+  * A misconfigured virtual switch that bridges two physical ports (virtual switches typically do not partake in STP)  
+  * End users using a dumb switch or hub  
+
+* Root Guard:  
+  * Enabled on a port-by-port basis - prevents a configured port from becoming a root port  
+  * Prevents a downstream switch (misconfigured or rogue) from becoming a root bridge  
+  * Places port in an ErrDisabled state if a superior BPDU is received on a configured port  
+  * Root Guard is placed on DPs toward other switches that should never become root bridges  
+  > **spanning-tree guard root**  
+  
+* STP Portfast:  
+  * Disables TCN generation for access ports  
+  * For Portfast, the access ports bypass the earlier 802.1D STP states (learning and listening) and forwards traffic immediately  
+  * Beneficial in environments where computers use DHCP or PXE  
+  > **spanning-tree portfast default**  
+  > **spanning-tree portfast disable**  
+  * Portfast can be enabled on trunk links, but should only be used with ports that are connecting to a single host:  
+  > **spanning-tree portfast trunk**  
+  
+* BPDU Guard:  
+  * Safety mechanism that shuts down ports configured with STP portfast upon receipt of a BPDU
+  * Ensures that a loop cannot accidentally be created if an unauthorized switch is added to the topology  
+  * To enable globally on all STP portfast ports:  
+  > **spanning-tree portfast bpduguard default**  
+  * To enable/disable on a specific interface:  
+  > **spanning-tree bpduguard {enable | disable}**  
+  > **show interfaces status**  
+  * By default, ports that are in ErrDisabled state do not automatically restore themselves  
+  * To enable Error Recovery service and modify the period it checks for ports:  
+  > **errdisable recovery cause bpduguard**  
+  > **errdisable recovery interval (*time-seconds*)**  
+  
+* BPDU Filter:  
+  * Blocks BPDUs from being transmitted out a port. For globally enabled:  
+  > **spanning-tree portfast bpdufilter default**  
+  * Port sends a series of 10 to 12 BPDUs. If switch redeives any BPDUs, it checks to identify which switch is more preferred  
+    * Preferred switch does not process any BPDUs that it receives, but still transmits to inferior downstream switches  
+    * Switch that is not the preferred switch will process BPDUs that are received, but does not transmit BPDUs to superior upstream switch  
+  * For interface-specific:  
+  > **spanning-tree bpdufilter enable**  
+  * Most network designs do not require BPDU filter  
+  
+* STP Loop Guard:  
