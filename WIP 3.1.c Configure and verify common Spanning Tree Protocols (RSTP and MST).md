@@ -195,3 +195,13 @@
   > **show udld (*int-id*)**  
   
   
+## Multiple Spanning Tree Protocol (MSTP)  802.1S  
+* **MST instance (MSTI)** - provides a blended approach by mapping one or more VLANs onto a single STP tree  
+* **MST region** - grouping of MST switches with the same high-level configuration  
+  * **Internal Spanning Tree (IST)** - the first instance (instance 0) which the MST uses as a special STP instance  
+  * IST runs on all switch port interfaces in the MST region, regardless of the VLANs associated with the ports  
+  * Cisco supports up to 16 MST instances by default  
+  * IST is always instance 0, and 1 - 15 can support other VLANs and is known as MSTIs  
+
+* **MST Configuration**:  
+1. 
