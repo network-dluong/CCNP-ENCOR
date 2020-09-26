@@ -129,14 +129,14 @@
   * A misconfigured virtual switch that bridges two physical ports (virtual switches typically do not partake in STP)  
   * End users using a dumb switch or hub  
 
-* Root Guard:  
+* **Root Guard**:  
   * Enabled on a port-by-port basis - prevents a configured port from becoming a root port  
   * Prevents a downstream switch (misconfigured or rogue) from becoming a root bridge  
   * Places port in an ErrDisabled state if a superior BPDU is received on a configured port  
   * Root Guard is placed on DPs toward other switches that should never become root bridges  
   > **spanning-tree guard root**  
   
-* STP Portfast:  
+* **STP Portfast**:  
   * Disables TCN generation for access ports  
   * For Portfast, the access ports bypass the earlier 802.1D STP states (learning and listening) and forwards traffic immediately  
   * Beneficial in environments where computers use DHCP or PXE  
@@ -145,7 +145,7 @@
   * Portfast can be enabled on trunk links, but should only be used with ports that are connecting to a single host:  
   > **spanning-tree portfast trunk**  
   
-* BPDU Guard:  
+* **BPDU Guard**:  
   * Safety mechanism that shuts down ports configured with STP portfast upon receipt of a BPDU
   * Ensures that a loop cannot accidentally be created if an unauthorized switch is added to the topology  
   * To enable globally on all STP portfast ports:  
@@ -158,7 +158,7 @@
   > **errdisable recovery cause bpduguard**  
   > **errdisable recovery interval (*time-seconds*)**  
   
-* BPDU Filter:  
+* **BPDU Filter**:  
   * Blocks BPDUs from being transmitted out a port. For globally enabled:  
   > **spanning-tree portfast bpdufilter default**  
   * Port sends a series of 10 to 12 BPDUs. If switch receives any BPDUs, it checks to identify which switch is more preferred  
@@ -168,7 +168,7 @@
   > **spanning-tree bpdufilter enable**  
   * Most network designs do not require BPDU filter  
   
-* STP Loop Guard:  
+* **STP Loop Guard**:  
   * Prevents any alternative or RPs from becoming DPs (ports toward downstream switches) due to loss of BPDUs on the RP  
   * Places the original port in an ErrDisabled state whil BPDUs are not being received  
   * Can be enabled globally, or interface specific:  
@@ -178,7 +178,7 @@
   * To view inconsistent ports:  
   > **show spanning-tree inconsistentports**  
 
-* Unidirectional Link Detection (UDLD):  
+* **Unidirectional Link Detection (UDLD)**:  
   * Allows for the bidirectional monitoring of fiber-optic cables  
   * Transmits UDLD packets to neighbor device which includes system ID and port ID of the interface  
   * Receiving device repeats this information back to the originating device  
