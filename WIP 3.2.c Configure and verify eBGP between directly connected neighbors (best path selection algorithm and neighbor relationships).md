@@ -30,4 +30,14 @@
   * BGP routers do not have to be in the data plane (path) to exchange prefixes, but all routers need to know all the routes that will be forwarded through them  
 
 * **Internal BGP (iBGP)**:  
+  * Sessions established with an iBGP router in the same AS or participating in the same BGP confederation  
+  * Prefixes are assigned an AD of 200 upon installation in the router's FIB  
+  * Redistributing BGP table into an IGP is not a viable solution:  
+    * Scalability - IGPs cannot scale to the level of routes of the Internet, which has over 780,000 IPv4 network prefixes  
+    * Custom routing - link-state protocols and distance vector protocols use metric as the primary method for route selection. IGP always use this routing pattern for path selection. BGP uses multiple steps to identify best path and allows for BGP path attributes to manipulate the path for a specific prefix (NLRI)  
+    * Path attributes - All BGP path attributes cannot be maintained within IGP protocols. Only BGP is capable of maintaining the path attribute as the prefix advertised from one edge of the AS to the other  
+    * SPs provide transit connectivity. Enterprise organizations are consumers and should not privode transit connectivity between ASs across the Internet  
+
+* **External BGP (eBGP)**:  
+  * Peerings are the core component of BGP on the Internet. It involves the exchange of network prefixes between ASs  
   * 
