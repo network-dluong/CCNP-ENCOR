@@ -40,4 +40,18 @@
 
 * **External BGP (eBGP)**:  
   * Peerings are the core component of BGP on the Internet. It involves the exchange of network prefixes between ASs  
-  * 
+  * TTL on eBGP packets is set to 1 by default (iBGP packets is set to 255, which allows for multi-hop sessions). They drop in transit if a mult-hop BGP session is attempted  
+  * Advertising router modifies BGP next-hop address to the IP address sourcing the BGP connection  
+  * Advertising router prepends its ASN to existing AS_Path variable  
+  * Receiving router verifies the AS_Path variable does not contain an ASN that matches the local routers. BGP discard NLRI if it fails the loop prevention check  
+  
+* **BGP Messages**:  
+
+| **Type** | **Name** | **Functional Overview** |
+| --- | --- | --- |
+| 1 | OPEN | Sets up and establishes BGP adjacency |
+| 2 | UPDATE | Advertises, updates, or withdraws routes |
+| 3 | NOTIFICATION | Indicates an error condition to a BGP neighbor |
+| 4 | KEEPALIVE | Ensures that BGP neighbors are still alive |
+
+
