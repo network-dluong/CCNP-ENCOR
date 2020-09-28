@@ -54,4 +54,15 @@
 | 3 | NOTIFICATION | Indicates an error condition to a BGP neighbor |
 | 4 | KEEPALIVE | Ensures that BGP neighbors are still alive |
 
+* **BGP Neighbor States**:  
+  * Idle - BGP tries to initiate a TCP connection to the peer. If an error causes it to go back to Idle state for a second time, the ConnectRetryTimer is set to 60 seconds and must go to zero before connection can be initiated again. Every consecutive failed attempt doubles the timer  
+  * Connect - BGP initiates TCP connection. If initiation is completed, the prcoess reset the Timer and sends Open message to the neighbor, then changes to OpenSent state. If Timer depletes before it is complete, a new TCP connection is attempted, the Timer is reset, and state is moved to Active. The neighbor with the higher IP address manages the connection, using a dynamic source port and destination port 179  
+  > **show tcp brief**  
+  * Active - BGP starts new three-way handshake. If connection is established, an Open message is sent, hold timer is set to 4 minutes, and state moves to OpenSent. If it fails, state moves back to Connect state, and Timer is reset  
+  * OpenSent - BGP versions much match. The source IP address must match IP address configured for the neighbor. The AS number must match what is configured for the neighbor. BGP RIDs must be unique. Security parameters must be set appropriately  
+  * OpenConfirm - BGP waits for KEEPALIVE or NOTIFICATION message. If KEEPALIVE received, it moves to Established. If hold timer expires, a stop event occurs, or if NOTIFICATION received, state goes to Idle  
+  * Established - BGP session is established. BGP neighbors exchange routes using UPDATE messages. Hold timer is reset when UPDATE and KEEPALIVE is received. If hold timer expires, an error is detected, and BGP moves neighbor back to Idle  
+  
+
+## Basic BGP Configuration  
 
