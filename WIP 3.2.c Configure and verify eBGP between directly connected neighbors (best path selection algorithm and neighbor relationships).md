@@ -65,4 +65,21 @@
   
 
 ## Basic BGP Configuration  
+* **BGP session parameters** - provides settings that involve establishing communication to the remote BGP neighbor (settings include ASN of BGP peer, authentication, and keepalive timers)  
+* **Address family initialization** - initialized under BGP router configuration mode. Network advertisements and summarization occur within the address family  
+* **Activate the address family on the BGP peer** - one address family for a neighbor must be activated in order for a session to initiate. The router's IP address is added to neighbor table, and BGP attempts to establish a BGP session or accepts a BGP session initiated from peer router  
+1. Initialize BGP routing process with global command:  
+> **router bgp (*as-number*)**  
+2. (Optional) Statically define BGP router ID (RID). The dynamic RID allocation logic uses highest IP address of the any *up* loopback interfaces. If there is no *up* loopback interface, then the highest IP address of any active *up* interfaces becomes the RID. Any IPv4 address can be used, including those not configured on the router. When RID changes, all BGP sessions reset and need to be reestablished:  
+> **bgp router-id (*router-id*)**  
+3. Identify BGP neighbor's IP address and ASN. When a BGP packet is received, the router correlates the source IP address of the packet to the IP address configured to that neighbor. If BGP packet source does not match an entry in neighbor table, the packet cannot associate to neighbor and is discarded:  
+> **neighbor (*ip-address*) remote-as (*as-number*)**  
+* (Optional) IPv4 address family is activated by default. The following steps are optional. To disable the automatic activation:  
+> **no bgp default ip4-unicast**  
+4. Initialize address family with BGP router. Examples of *afi* values are IPv4 and IPv6, and *safi* values are unicast and multicast:  
+> **address-family (*afi*) (*safi*)**  
+5. Activate address family for BGP neighbor:  
+> **neighbor (*ip-address*) activate**  
 
+* **Verification of BGP Sessions**:  
+  *
