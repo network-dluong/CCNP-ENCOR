@@ -101,7 +101,7 @@
   * Adj-RIB-In - contains NLRIs in original form (before inbound route policies are processed). Table is purged after all route policies are processed to save memory  
   * Loc-RIB - contains all NLRIs that originated locally or received from other BGP peers. After NLRIs pass validity and next-hop reachability check, the BGP best-path algorithm selects best NLRI for a specific prefix. LOC-RIB table is used for presenting routes to the IP routing table  
   * Adj-RIB-Out - contains NLRIs after outbound route policies have been processed 
-    * To display contents of BGP database on router:  
+  * To display contents of BGP database on router:  
   > **show bgp (*afi*) (*safi*)  
   * BGP performs the following route processing steps:  
  1. Store route in Adj-RIB-In table in original state and apply the inbound route policy based on neighbor on which the route was received  
