@@ -91,9 +91,9 @@
   * Connected network - next-hop BGP attribute is set to 0.0.0.0, BGP origin attribute is set to i (IGP), and BGP weight is set to 32,768  
   * Static route or routing protocol - next-hop BGP attribute is set to next-hop IP address in the RIB, BGP origin attribute is set to i (IGP), BGP weight is set to 32,768, and MED is set to the IGP metric  
   * All routes in Loc-RIB table use the following process for advertisement to BGP peers:  
-  1. Pass a validity check. Veryify that NRLI is valid and next-hop address is resolvable in the global RIB. If NRLI fails, it remains but does not process further  
-  2. Process outbound neighbor route policies. If a route was not denied by outbound policies after processing, the route is maintained in Adj-RIB-Out table for later reference  
-  3. Advertise NLRI to BGP peers. If NLRI's next-hop PA is 0.0.0.0, then next-hop address is changed to the IP address of BGP session  
+ 1. Pass a validity check. Veryify that NRLI is valid and next-hop address is resolvable in the global RIB. If NRLI fails, it remains but does not process further  
+ 2. Process outbound neighbor route policies. If a route was not denied by outbound policies after processing, the route is maintained in Adj-RIB-Out table for later reference  
+ 3. Advertise NLRI to BGP peers. If NLRI's next-hop PA is 0.0.0.0, then next-hop address is changed to the IP address of BGP session  
   * To advertise IPv4 networks (optional **route-map** provides method of setting specific BGP PAs when the prefix installs into Loc-RIB table):  
   > **network (*network*) mask (*subnet-mask*) [route-map (*route-map-name*)]**  
   
@@ -102,11 +102,11 @@
   * Loc-RIB - contains all NLRIs that originated locally or received from other BGP peers. After NLRIs pass validity and next-hop reachability check, the BGP best-path algorithm selects best NLRI for a specific prefix. LOC-RIB table is used for presenting routes to the IP routing table  
   * Adj-RIB-Out - contains NLRIs after outbound route policies have been processed  
   * BGP performs the following route processing steps:  
-  1. Store route in Adj-RIB-In table in original state and apply the inbound route policy based on neighbor on which the route was received  
-  2. Update Loc_RIB with latest entry, and the Adj-RIB-In table is cleared to save memory  
+ 1. Store route in Adj-RIB-In table in original state and apply the inbound route policy based on neighbor on which the route was received  
+ 2. Update Loc_RIB with latest entry, and the Adj-RIB-In table is cleared to save memory  
   3. Pass validity check to verify that the route is valid and next-hop address is resolvable in global RIB. If the route fails, it remains in Loc-RIB table but is not processed further  
-  4. Identify BGP best path and pass only the best path and its pat attributes to step 5  
-  5. Install best-path route into global RIB, process outbound route policy, store non-discarded routes in Adj-RIB-Out table, and advertise to BGP peers  
+ 4. Identify BGP best path and pass only the best path and its pat attributes to step 5  
+ 5. Install best-path route into global RIB, process outbound route policy, store non-discarded routes in Adj-RIB-Out table, and advertise to BGP peers  
   * To display contents of BGP database on router:  
   > **show bgp (*afi*) (*safi*)  
   
