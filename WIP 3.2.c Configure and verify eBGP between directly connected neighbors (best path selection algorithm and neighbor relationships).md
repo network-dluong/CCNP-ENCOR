@@ -8,10 +8,10 @@
      * Need for a unique routing policy from providers  
 
 * **Path Attributes**:  
-* Well-known mandatory - must be included with every prefix advertisement  
-* Well-known discretionary - may or may not be included with a prefix advertisement  
-* Optional transitive - do not have to be recognized by all BGP implementations. Can be set to be transitive and stay with the route advertisement from AS to AS  
-* Optional non-transitive - cannot be shared from AS to AS  
+* **Well-known mandatory** - must be included with every prefix advertisement  
+* **Well-known discretionary** - may or may not be included with a prefix advertisement  
+* **Optional transitive** - do not have to be recognized by all BGP implementations. Can be set to be transitive and stay with the route advertisement from AS to AS  
+* **Optional non-transitive** - cannot be shared from AS to AS  
 
 * **Loop Prevention**:  
   * AS_Path is a well-known mandatory attribute and includes a complete list of all ASNs that the prefix advertisement has traversed from its source AS  
