@@ -106,7 +106,27 @@
   * BGP performs the following route processing steps:  
  1. Store route in Adj-RIB-In table in original state and apply the inbound route policy based on neighbor on which the route was received  
  2. Update Loc_RIB with latest entry, and the Adj-RIB-In table is cleared to save memory  
-  3. Pass validity check to verify that the route is valid and next-hop address is resolvable in global RIB. If the route fails, it remains in Loc-RIB table but is not processed further  
+ 3. Pass validity check to verify that the route is valid and next-hop address is resolvable in global RIB. If the route fails, it remains in Loc-RIB table but is not processed further  
  4. Identify BGP best path and pass only the best path and its pat attributes to step 5  
  5. Install best-path route into global RIB, process outbound route policy, store non-discarded routes in Adj-RIB-Out table, and advertise to BGP peers  
 
+  * To display all the paths for a specific route and BGP path attributes:  
+  > **show bgp (*afi*) (*safi*) (*network*)**  
+  * To display contents of Adj-RIB-Out table for a neighbor:  
+  > **show bgp (*afi*) (*safi*) neighbor (*ip-address*) advertised routes**
+  * To verify the exchange of NLRIs between nodes:  
+  > **show bgp ipv4 unicast summary**  
+  * To display BGP routes in global RIB:  
+  > **show ip route bgp**  
+  
+## Route Summarization  
+* Conserves router resources and accelerates best-path calculation by reducing size of table  
+* Provides stability by hiding route flaps from downstream routers, reducing routing churn  
+* **Static** - create a static route to Null0 for summary network prefix and then advertise the prefix with a **network** statement. Downfall is that the summary route is always advertised, even if networks are not available  
+* **Dynamic** - Configure an aggregation network prefix. When routes match the aggregate network prefix enter the BGP table, then the aggregate prefix created. The originating router sets next hop to Null0 as a discard route for the aggregated prefix for loop prevention  
+* **Aggregate Address**:  
+  * To enable dynamic route summarization:  
+  > **aggregate-address (*network*) (*subnet-mask*)** **[summary-only]** **[as-set]**  
+  * **aggregate-address** command advertises the aggregated route in addition to the original component network prefixes  
+  * **summary-only** suppresses component network prefixes in the summarized network range  
+* **Atomic Aggregate**:  
