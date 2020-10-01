@@ -1,4 +1,4 @@
-## Border Gateway Protocol (BGP)  
+# Border Gateway Protocol (BGP)  
 * **Autonomous System (AS)**:  
   * A collection of routers under a single organization's control, using one or more IGPs and common metrics to route packets within the AS (IGP is not required in AS)  
   * ASNs 64,512 - 65,535 are private in the 16-bit range, ASNs 4,200,000,000 - 4,294,967,294 are private in the 32-bit range  
@@ -153,5 +153,5 @@
   > **aggregate-address (*prefix/prefix-length*) [summary-only]** **[as-set]**  
   
 
-## Advanced BGP  
+# Advanced BGP  
 ## BGP Multihoming  
