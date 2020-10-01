@@ -130,3 +130,28 @@
   * **aggregate-address** command advertises the aggregated route in addition to the original component network prefixes  
   * **summary-only** suppresses component network prefixes in the summarized network range  
 * **Atomic Aggregate**:  
+  * Acts like new BGP routes with shorter prefix length  
+  * Indicates that a loss of path information has occurred  
+* **Route Aggregation with AS_SET**:  
+  * **as-set** - only counts as one hop, even if multiple ASs are listed  
+  
+## Multiprotocol BGP for IPv6  
+* BP-BGP enables BGP to carry NLRI for multiple protocols (IPv4, IPv6, and MPLS L3VPNs)  
+* All the same underlying IPv4 path vector routing protocol features and rules apply to IPv6  
+* **IPv6 Configuration**:  
+  * Routers with only IPv6 addressing must statically define the BGP RID to allow sessions to form  
+  * Unique global unicast addressing is recommended for BGP peering to avoid operational complexity  
+  * To disable IPv4 unicast (enabled by default):  
+  > **no bgp default ipv4-unicast**  
+  * To display IPv6 information, summary, and path attributes:  
+  > **show bgp ipv6 unicast neighbors (*ip-address*) [detail]**  
+  > **show bgp ipv6 unicast summary**  
+  > **show bgp ipv6 unicast (*prefix/prefix-length*)**  
+  
+* **IPv6 Summarization**:  
+  * Same process for IPv6 applies to IPv6 except the configuration:  
+  > **aggregate-address (*prefix/prefix-length*) [summary-only]** **[as-set]**  
+  
+
+## Advanced BGP  
+## BGP Multihoming  
