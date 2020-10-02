@@ -136,7 +136,7 @@
   * **as-set** - only counts as one hop, even if multiple ASs are listed  
   
 ## Multiprotocol BGP for IPv6  
-* BP-BGP enables BGP to carry NLRI for multiple protocols (IPv4, IPv6, and MPLS L3VPNs)  
+* MP-BGP enables BGP to carry NLRI for multiple protocols (IPv4, IPv6, and MPLS L3VPNs)  
 * All the same underlying IPv4 path vector routing protocol features and rules apply to IPv6  
 * **IPv6 Configuration**:  
   * Routers with only IPv6 addressing must statically define the BGP RID to allow sessions to form  
