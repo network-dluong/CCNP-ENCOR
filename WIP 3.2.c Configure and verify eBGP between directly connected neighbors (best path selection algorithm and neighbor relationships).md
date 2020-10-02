@@ -155,3 +155,20 @@
 
 # Advanced BGP  
 ## BGP Multihoming  
+* Provides redundancy by adding a second circuit and establishing a second BGP session across the peering link  
+* Adding more SPs means traffic can select an optimal path between devices due to the BGP best-path algorithm  
+* **Scenario 1** - R1 connects to R2 with the same SP. This accounts for link failures. Failure on either router or within SP1's network results in a network failure  
+* **Scenario 2** - R1 connects to R2 and R3 with the same SP. This account for link failures. Failure on R1 or within SP1's network resultes in a network failure  
+* **Scenario 3** - R1 connects to R2 and R3 with different SPs. This accounts for link failures and failures in either SP's network, and it can optimize routing traffic. Faulre on R1 results in a network failure  
+* **Scenario 4** - R1 and R2 form iBGP session together. R3 connects to SP1, and R4 connects to SP2. This accounts for link failures and failures in either SP's network, and it can optimize routing traffic  
+
+* **Internet Transit Routing**:  
+  * If an enterprise uses BGP to connect with more than one SP, it runs the risk of its AS becoming a transit AS  
+  * Transit routing can be avoided by applying outbound BGP route policies that only allow for local BGP routes to be advertised to other ASs  
+
+* **Branch Transit Routing**:  
+  * Proper network design takes traffic patterns into account to prevent suboptimal or routing loops  
+  * When network is properly designed, traffic between sites use the preferred SP network in both directions, which simplifies troubleshooting when the traffic flow is symmetric (same path in both directions) versus asymmetric (different path for each direction)  
+  * Path is *deterministic* when the flow between sites is pre-determined and predictable  
+  * Unplanned transit connectivity can give the following issues:  
+    * 
