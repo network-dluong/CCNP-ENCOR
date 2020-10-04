@@ -171,4 +171,15 @@
   * When network is properly designed, traffic between sites use the preferred SP network in both directions, which simplifies troubleshooting when the traffic flow is symmetric (same path in both directions) versus asymmetric (different path for each direction)  
   * Path is *deterministic* when the flow between sites is pre-determined and predictable  
   * Unplanned transit connectivity can give the following issues:  
-    * 
+    * Transit router's circuit can become oversaturated because they were sized for that site's traffic and not the traffic crossing through them  
+    * Routing patterns can become unpredictable and nondeterministic  
+
+
+## Conditional Matching  
+* **ACLs**:  
+  * Standard ACLs:  
+  1. Define ACL:
+  > **ip access-list standard {*acl-number* | *acl-name*}**  
+  2. Configure specific ACE entry:  
+  > **[*sequence*] {permit | deny} (*source*) (*source-wildcard*)**  
+  
