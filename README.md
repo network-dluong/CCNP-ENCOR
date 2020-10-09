@@ -15,6 +15,9 @@
 
 
 ### 5.4 *Configure and verify wireless security features*  
+5.4.a EAP  
+5.4.b WebAuth  
+5.4.c PSK  
 
 
 ### 5.5 *Describe the components of network security design*  
