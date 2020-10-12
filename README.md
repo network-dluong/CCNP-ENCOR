@@ -17,7 +17,7 @@
 ### 5.4 *[Configure and verify wireless security features](https://github.com/network-dluong/CCNP-ENCOR/blob/5.0-Security/5.4%20Configure%20and%20verify%20wireless%20security%20features.md)*  
 5.4.a [EAP](https://github.com/network-dluong/CCNP-ENCOR/blob/5.0-Security/5.4.a%20EAP.md)  
 5.4.b WebAuth  
-5.4.c PSK  
+5.4.c [PSK](https://github.com/network-dluong/CCNP-ENCOR/blob/5.0-Security/5.4.c%20PSK.md)  
 
 
 ### 5.5 *Describe the components of network security design*  
