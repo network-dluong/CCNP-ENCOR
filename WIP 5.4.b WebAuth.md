@@ -1,0 +1,12 @@
+## Authenticating with WebAuth  
+* WebAuth presents the end user with content to read and interact with before granting access to the network (Acceptable Use Policy, entering user credentials)  
+* Can be used as an additional layer with Open Authentication, PSK, and EAP  
+* Can be handled locally on the WLC for smaller environments through Local Web Authentication (LWA)  
+  * LWA with an internal database on WLC  
+  * LWA with an external database on RADIUS or LDAP server  
+  * LWA with an external redirect after authentication  
+  * LWA with an external splash page redirect, using an internal database on WLC  
+  * LWA with passthrough, requiring user acknowledgement  
+* Central Web Authentication (CWA) uses LWA with an external database on a RADIUS server (ISE) and keeps user databased centralized  
+
+
