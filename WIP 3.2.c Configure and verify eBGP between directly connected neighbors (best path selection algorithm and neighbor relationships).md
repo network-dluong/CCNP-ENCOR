@@ -209,3 +209,26 @@
 * Used to parse through the large number of available ASNs   
 * Based on query modifiers used to select appropriate content   
 > **show bgp (*afi safi*) regexp (*regex-pattern*)**   
+
+| **Modifier** | **Description** |
+| _ (underscore) | Matches a space |
+| ^ (caret) | Indicates start of a string |
+| $ (dollar sign) | Indicates end of a string |
+| [] (brackets) | Matches a single character or nesting within a range |
+| - (hyphen) | Indicates a range of numbers in brackets |
+| [^] (caret in brackets) | Excludes characters listed in brackets |
+| () (parantheses) | Used for nesting of search patterns |
+| l (pipe) | Provides OR functionality to the query |
+| . (period) | Matches a single character, including a space |
+| * (asterisk) | Matches zero or more characters or patterns |
+| + (plus sign) | Matches one or more instances of the character or pattern |
+| ? (question mark) | Matches one or no instances of the character or pattern |
+
+#### Example:
+| **Regular Expression** | **Meaning** |
+| ^# | Local originating routes |
+| permit ^200_ | Only routes from neighbor AS 200 |
+| permit _ 200$ | Only routes originating from AS 200 |
+| permit _ 200 _ | Only routes that pass through AS 200 | 
+| permit ^[0-9] + [0-9] + [0-9] +? | Routes with three or fewer AS_Path entries |
+
