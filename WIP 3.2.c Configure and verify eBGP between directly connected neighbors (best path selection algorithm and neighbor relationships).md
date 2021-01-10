@@ -211,6 +211,7 @@
 > **show bgp (*afi safi*) regexp (*regex-pattern*)**   
 
 | **Modifier** | **Description** |
+| --- | --- |
 | _ (underscore) | Matches a space |
 | ^ (caret) | Indicates start of a string |
 | $ (dollar sign) | Indicates end of a string |
@@ -226,6 +227,7 @@
 
 #### Example:
 | **Regular Expression** | **Meaning** |
+| --- | --- |
 | ^# | Local originating routes |
 | permit ^200_ | Only routes from neighbor AS 200 |
 | permit _ 200$ | Only routes originating from AS 200 |
