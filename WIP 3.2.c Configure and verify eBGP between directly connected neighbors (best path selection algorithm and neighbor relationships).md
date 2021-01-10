@@ -189,20 +189,20 @@
 > **[*sequence*] {permit | deny} (*protocol*) (*source*) (*source-wildcard*) (*destination*) (*destination-wildcard*)**  
 
 ### BGP Network Selection:   
- * Source fields must match against network portion of the route, and destination fields match against the network mask   
+* Source fields must match against network portion of the route, and destination fields match against the network mask   
  
 ### Prefix Matching:
- * Identifies a specific IP address, network, or network range and allows for selection of multiple networks with a variety of prefix lengths by using a prefix match specification   
- * Two parts: high-order bit pattern and a high-order bit count, which determines the high-order bits in the bit pattern that are to be matched   
- * Identical to an access list   
+* Identifies a specific IP address, network, or network range and allows for selection of multiple networks with a variety of prefix lengths by using a prefix match specification   
+* Two parts: high-order bit pattern and a high-order bit count, which determines the high-order bits in the bit pattern that are to be matched   
+* Identical to an access list   
   * **le**: Less than or equal to (<=)   
   * **ge**: Greater than or equal to (>=)   
   
 ### Prefix Lists   
- * Processes in sequential order in top-down fashion   
- > **ip prefix-list (*prefix-list-name* [seq (*sequence-number*]** {**permit | deny} (*high-order-bit-pattern/high-order-bit-count* [ge (*value*)]** **[le (*value*])**   
- > **ipv6 prefix-list (*prefix-list-name* [seq (*sequence-number*]** {**permit | deny} (*high-order-bit-pattern/high-order-bit-count* [ge (*value*)]** **[le (*value*])**  
- * If sequence is not provided, number auto-increments by 5 based on the highest sequence number (first entry is 5)   
+* Processes in sequential order in top-down fashion   
+* If sequence is not provided, number auto-increments by 5 based on the highest sequence number (first entry is 5)   
+> **ip prefix-list (*prefix-list-name* [seq (*sequence-number*]** {**permit | deny} (*high-order-bit-pattern/high-order-bit-count* [ge (*value*)]** **[le (*value*])**   
+> **ipv6 prefix-list (*prefix-list-name* [seq (*sequence-number*]** {**permit | deny} (*high-order-bit-pattern/high-order-bit-count* [ge (*value*)]** **[le (*value*])**  
  
  
 ## Regular Expressions (regex)   
