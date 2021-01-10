@@ -201,8 +201,11 @@
 ### Prefix Lists   
  * Processes in sequential order in top-down fashion   
  > **ip prefix-list (*prefix-list-name* [seq (*sequence-number*]** {**permit | deny} (*high-order-bit-pattern/high-order-bit-count* [ge (*value*)]** **[le (*value*])**   
-  > **ipv6 prefix-list (*prefix-list-name* [seq (*sequence-number*]** {**permit | deny} (*high-order-bit-pattern/high-order-bit-count* [ge (*value*)]** **[le (*value*])**  
+ > **ipv6 prefix-list (*prefix-list-name* [seq (*sequence-number*]** {**permit | deny} (*high-order-bit-pattern/high-order-bit-count* [ge (*value*)]** **[le (*value*])**  
  * If sequence is not provided, number auto-increments by 5 based on the highest sequence number (first entry is 5)   
  
  
 ## Regular Expressions (regex)   
+* Used to parse through the large number of available ASNs   
+* Based on query modifiers used to select appropriate content   
+> **show bgp (*afi safi*) regexp (*regex-pattern*)   
