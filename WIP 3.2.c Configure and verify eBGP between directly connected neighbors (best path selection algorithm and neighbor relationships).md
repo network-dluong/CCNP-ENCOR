@@ -195,8 +195,8 @@
  * Identifies a specific IP address, network, or network range and allows for selection of multiple networks with a variety of prefix lengths by using a prefix match specification   
  * Two parts: high-order bit pattern and a high-order bit count, which determines the high-order bits in the bit pattern that are to be matched   
  * Identical to an access list   
-  * le: Less than or equal to (<=)   
-  * ge: Greater than or equal to (>=)   
+  * **le**: Less than or equal to (<=)   
+  * **ge**: Greater than or equal to (>=)   
   
 ### Prefix Lists   
  * Processes in sequential order in top-down fashion   
