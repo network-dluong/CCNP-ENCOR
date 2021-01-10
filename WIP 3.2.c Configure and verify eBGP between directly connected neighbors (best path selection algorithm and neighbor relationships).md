@@ -208,4 +208,4 @@
 ## Regular Expressions (regex)   
 * Used to parse through the large number of available ASNs   
 * Based on query modifiers used to select appropriate content   
-> **show bgp (*afi safi*) regexp (*regex-pattern*)   
+> **show bgp (*afi safi*) regexp (*regex-pattern*)**   
